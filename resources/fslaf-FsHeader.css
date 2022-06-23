@@ -1,0 +1,3213 @@
+/*
+ * =========================================================================
+ * |                                                                       |
+ * | FsHeader files below here                                             |
+ * | (Common.css)                                                          |
+ * |                                                                       |
+ * =========================================================================
+ */
+ 
+ /**
+ * This is our stylesheet for the wiki. It tries to duplicate the 
+ * look and feel of the main www site and be true to the FamilySearch
+ * Style Guide @ref https://fs-styleguide.herokuapp.com/. 
+ *
+ * You can update this index with 
+ * grep '/\*\*\*\* '  resources/common.css | awk -F* '{print " * " $5}'
+ *
+ * Contents are ordered from general to most specific
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
+ *
+ *
+ * Contents:
+ *   1. Type selectors (e.g., h1) and pseudo-elements (e.g., ::before). 
+ *   2. Class selectors .foo, attributes selectors [type=â€œradioâ€], pseudo-classes :hover 
+ *   Location button 
+ *   community button 
+ *   3. ID selectors (e.g., #example). 
+ *   MediaWiki:Common.css
+ * 
+ */
+
+.overlay-header-container.position-fixed, .overlay-footer-container.position-fixed {
+    padding-top: 73px;
+}
+
+/**** 1. Type selectors (e.g., h1) and pseudo-elements (e.g., ::before). *****/
+
+/** change the box around the code feature */
+
+code {
+    color: #000;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+dd {
+    margin-bottom: 0.5em;
+}
+
+header>.global-pri-nav-container>h1 {
+    padding-top: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+label {
+    font-size: 0.875em !important;
+    font-weight: normal;
+    color: #252525;
+}
+
+[class^="mw-htmlform-field"] label {
+    color: inherit;
+    display: inline;
+    font-size: 100%;
+    font-weight: inherit;
+    line-height: inherit;
+    cursor: initial;
+}
+
+select {
+    border-color: rgb(169, 169, 169);
+    border-width: 1px;
+    border-style: solid;
+    font-size: 1rem;
+    font-family: inherit;
+    padding: 2px 6px 3px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+/** Special:UserRights */
+
+fieldset ul li {
+    margin-left: 15px;
+}
+
+/**** 2. Class selectors .foo, attributes selectors [type=â€œradioâ€], pseudo-classes :hover */
+
+/**** Location button ********************************************************/
+
+.online_records_button {
+    background-color: #3073dd;
+    border-radius: 10px;
+    color: white;
+    width: 210px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin: 5px;
+    padding: 5px;
+    display: block;
+}
+
+.online_records_button:hover, .online_records_button:visited {
+    text-decoration: none !important;
+    background-color: #5088e2;
+}
+
+.online_records_button>a, .online_records_button>a.visited, .online_records_button>a.external:visited, .online_records_button>a:hover {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+/**** community button *******************************************************/
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.community_button {
+    background-color: #996799;
+    border-radius: 10px;
+    color: white;
+    width: 210px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin: 5px;
+    padding: 5px;
+    display: block;
+}
+
+#fsButtons {
+   margin: 10px;
+}
+
+#fsButtons a:hover, #fsButtons a:visited {
+    text-decoration: none !important;
+}
+
+.community_button:hover, community_button:visited {
+    background-color: #a85882;
+}
+
+.community_button>a, .community_button>a.visited, .community_button>a.external:visited, .community_button>a:hover {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+/** Remove the blue box-shadow when hovering over header items, which is set by the skin Minerva  */
+
+nav ul li a:hover {
+    box-shadow: unset!important;
+}
+
+/** e.g. https://beta.familysearch.org/wiki/en/United_States_Genealogy
+   e.g. https://beta.familysearch.org/wiki/en/User:Ahancey/Sandbox-columns */
+
+@media screen and (min-width: 1400px) {
+    .column-resize {
+        column-count: 5;
+        padding-left: 9% !important;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+    .column-resize {
+        column-count: 4;
+        padding-left: 11% !important;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width:1199px) {
+    .column-resize {
+        column-count: 3;
+        padding-left: 14% !important;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width:899px) {
+    .column-resize {
+        column-count: 2;
+        padding-left: 20% !important;
+    }
+}
+
+@media screen and (max-width:599px) {
+    .column-resize {
+        column-count: 1;
+        padding-left: 33% !important;
+    }
+}
+
+/** The following definition is needed for collapsible menu items */
+
+.mw-customtoggle, .mw-collapsible-toggle {
+    background: none !important;
+    border: none !important;
+    font-size: 1rem !important;
+    line-height: 1rem !important;
+    font-family: Helvetica, Verdana, san-serif !important;
+    color: #262626 !important;
+    padding: 0px !important;
+}
+
+/**  Fix selection box size in page tabs ( Read, Edit, View History, etc.) */
+
+.vectorTabs li a {
+    padding-bottom: 1rem;
+    font-size: inherit;
+}
+
+/**  fix clickable box around the 'more' tab at the top of the page. */
+
+.vectorMenu #p-cactions {
+    margin-top: 0.5rem;
+}
+
+.toctext {
+    line-height: 1.125rem;
+}
+
+/** images  Note the if you wrap your image in a p tag rather than a div
+ * you can get a better print layout */
+
+div.floatright, table.floatright {
+    clear: right;
+    float: right;
+    position: relative;
+    margin: 0 0 .5em .5em;
+    border: 0;
+}
+
+/** e.g. https://beta.familysearch.org/wiki/en/User:Ahancey/Sandbox-tables2 */
+
+div.floatleft, table.floatleft {
+    float: left;
+    clear: left;
+    position: relative;
+    margin: 0 .5em .5em 0;
+    border: 0;
+}
+
+/** e.g. https://beta.familysearch.org/wiki/en/GuidedResearch:Why_Can%27t_I_Find_the_Record_-_Lancashire_Births */
+
+.plainlinks a {
+    background: none !important;
+    padding: 0 !important;
+}
+
+/** prettytable class for skinning normal tables
+e.g. https://beta.familysearch.org/wiki/en/FamilySearch_Indexing_Updates
+e.g. https://beta.familysearch.org/wiki/en/FamilySearch_Wiki:New_Contributors_Training
+e.g. https://beta.familysearch.org/wiki/en/User:Batsondl/Sandbox_20
+Beware!! There is a 'template:prettytable' that is totally different:
+@FIXME Should eliminate the template and replace it with built-in class wikitable 
+These and variants can be found in our wiki
+{| class="prettytable" |
+{| class="wikitable sortable" {{prettytable}} 
+{| {{prettytable}} |
+*/
+
+.prettytable {
+    margin: 1em 1em 1em 0;
+    background: #f9f9f9;
+    border: 1px #aaa solid;
+    border-collapse: collapse;
+    color: #333;
+}
+
+.prettytable th, .prettytable td {
+    border: 1px #aaa solid;
+    padding: 0.2em;
+}
+
+.prettytable th {
+    background: #f2f2f2;
+    text-align: center;
+}
+
+.prettytable caption {
+    font-weight: bold;
+}
+
+/** For linked citation numbers and document IDs, where
+   the number need not be shown on a screen or a handheld,
+   but should be included in the printed version */
+
+@media screen and (min-width:480px) {
+    .citation .printonly {
+        display: none;
+    }
+}
+
+/** Breaks long urls, etc., rather than overflowing box */
+
+.url {
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    -epub-word-break: break-all;
+    word-break: break-all;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -epub-hyphens: auto;
+    hyphens: auto;
+}
+
+/** Style for horizontal lists (separator following item).
+   IE8-specific classes are assigned in [[MediaWiki:Common.js/IEFixes.js]].
+   @source mediawiki.org/wiki/Snippets/Horizontal_lists
+   @revision 5 (2014-02-24)
+   @author [[User:Edokter]]
+ */
+
+/** HLIST IS PART OF MINERVA AND SO THIS MAY NOT BE NEEDED  The part that seems to be 
+ * different is the content 'before' and 'after'
+   e.g.https://beta.familysearch.org/wiki/en/index.php?title=Template:Organization_infoboxes
+   e.g. https://beta.familysearch.org/wiki/en/Template:TOC_top */
+
+.hlist dl, .hlist ol, .hlist ul {
+    margin: 0;
+    padding: 0;
+}
+
+/** Display list items inline */
+
+.hlist dd, .hlist dt, .hlist li {
+    display: inline;
+}
+
+/** Display nested lists inline */
+
+.hlist dl dl, .hlist dl ol, .hlist dl ul, .hlist ol dl, .hlist ol ol, .hlist ol ul, .hlist ul dl, .hlist ul ol, .hlist ul ul {
+    display: inline;
+}
+
+/** Generate interpuncts */
+
+.hlist dt:after {
+    content: ": ";
+}
+
+.hlist dd:after, .hlist li:after {
+    content: " . ";
+    font-weight: bold;
+}
+
+/** For IE8 */
+
+.hlist dd:last-child:after, .hlist dt:last-child:after, .hlist li:last-child:after {
+    content: none;
+}
+
+.hlist dd.hlist-last-child:after, .hlist dt.hlist-last-child:after, .hlist li.hlist-last-child:after {
+    content: none;
+}
+
+/** Add parentheses around nested lists */
+
+.hlist dd dd:first-child:before, .hlist dd dt:first-child:before, .hlist dd li:first-child:before, .hlist dt dd:first-child:before, .hlist dt dt:first-child:before, .hlist dt li:first-child:before, .hlist li dd:first-child:before, .hlist li dt:first-child:before, .hlist li li:first-child:before {
+    content: " (";
+    font-weight: normal;
+}
+
+.hlist dd dd:last-child:after, .hlist dd dt:last-child:after, .hlist dd li:last-child:after, .hlist dt dd:last-child:after, .hlist dt dt:last-child:after, .hlist dt li:last-child:after, .hlist li dd:last-child:after, .hlist li dt:last-child:after, .hlist li li:last-child:after {
+    content: ") ";
+    font-weight: normal;
+}
+
+/** For IE8 */
+
+.hlist dd dd.hlist-last-child:after, .hlist dd dt.hlist-last-child:after, .hlist dd li.hlist-last-child:after, .hlist dt dd.hlist-last-child:after, .hlist dt dt.hlist-last-child:after, .hlist dt li.hlist-last-child:after, .hlist li dd.hlist-last-child:after, .hlist li dt.hlist-last-child:after, .hlist li li.hlist-last-child:after {
+    content: ") ";
+    font-weight: normal;
+}
+
+/** Put ordinals in front of ordered list items */
+
+.hlist ol {
+    counter-reset: listitem;
+}
+
+.hlist ol>li {
+    counter-increment: listitem;
+}
+
+.hlist ol>li:before {
+    content: " " counter(listitem) " ";
+    white-space: nowrap;
+}
+
+.hlist dd ol>li:first-child:before, .hlist dt ol>li:first-child:before, .hlist li ol>li:first-child:before {
+    content: " (" counter(listitem) " ";
+}
+
+/** Unbulleted lists */
+
+.plainlist ul {
+    line-height: inherit;
+    list-style: none none;
+    margin: 0;
+}
+
+.plainlist ul li {
+    margin-bottom: 0;
+}
+
+/** tooltip popup box */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: #85B807;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+    /** Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #85B807 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/**** 3. ID selectors (e.g., #example). **************************************/
+
+/** Entries to counter wiki css code that is disrupting the ability of text to flow */
+
+#mainContent p {
+    clear: none;
+}
+
+#contentSub {
+    display: block;
+    font-size: 84%;
+    line-height: 1.2em;
+    margin: 0 0 1.4em 1em;
+    color: #7D7D7D;
+    width: auto;
+}
+
+div#mw-panel div.portal {
+    margin: 0;
+}
+
+div#mw-panel div.portal div.body ul li a {
+    color: #0060d7;
+}
+
+div#mw-panel div.portal h3 {
+    font-family: Helvetica, Verdana, san-serif;
+    font-size: 0.875em;
+}
+
+.vectorTabs li {
+    font-size:.875em;
+}
+
+/** Entries to counter wiki css code for TOC */
+
+#toc {
+    width: auto;
+}
+
+#toc ul {
+    margin-top: 0;
+    margin-left: 1em;
+}
+
+#menu-header-links-bottom.menu {
+    list-style: none;
+}
+
+/** get rid of 'language' at the top of the screen, next to username */
+
+#pt-uls a.uls-trigger {
+    display: none;
+}
+
+#wikiEditor-ui-toolbar {
+    height: 32px;
+}
+
+div#mw-navigation #pt-logout, div#mw-navigation #pt-anonlogin, div#mw-navigation #p-logo {
+    display: none;
+}
+
+#mw-navigation #mw-panel.collapsible-nav .portal.first.persistent {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+#mw-navigation #mw-panel.collapsible-nav .portal.first.persistent h3 {
+    display: block;
+    font-size: 1em;
+}
+
+#mw-panel #p-logo+.portal h3 {
+    display: block!important;
+}
+
+#mw-navigation #mw-panel {
+    top: 80px;
+    z-index: 1;
+}
+
+.templeMember #global-engage-header ul.main-nav li.nav-temple-link .templeInfoChecked .nav-item.temple {
+    display: block !important;
+}
+
+#wrapper .inj-wrapper {
+    min-height: inherit;
+    width: 100%;
+}
+
+#fs-footer {
+    background-color: transparent;
+    font-size: 1rem;
+    text-align: center;
+}
+
+@media screen and (min-width: 992px) {
+    #fs-footer {
+        text-align: left;
+    }
+}
+
+#fs-footer .footer-container {
+    position: relative;
+    display: block;
+    color: #7d7976;
+}
+
+#fs-footer .footer-container a {
+    color: #333;
+}
+
+#fs-footer .footer-container .copyright-notice .service-by-link a {
+    white-space: nowrap;
+}
+
+#fs-footer .footer-container .copyright-notice, #fs-footer .footer-container .copyright-notice {
+    font-size: 0.75rem;
+}
+
+#fs-footer .footer-container .footer-nav {
+    margin-bottom: 1.25rem;
+}
+
+#fs-footer .footer-container .footer-nav .menu-footer-menu-container, #fs-footer .footer-container .footer-nav .menu-footer-menu-container ul.menu, #fs-footer .footer-container .footer-nav span.menu-item, #fs-footer .footer-container .footer-nav #menu-footer-menu {
+    display: inline;
+}
+
+#fs-footer .footer-container .footer-nav #menu-footer-menu {
+    padding: 0;
+}
+
+#fs-footer .footer-container .footer-nav span.menu-item {
+    font-family: "Verdana", sans-serif;
+    color: #333;
+}
+
+#fs-footer .footer-container .footer-nav .menu-item {
+    display: inline-block;
+    margin-right: 2rem;
+    font-size: 0.75rem;
+}
+
+#fs-footer .footer-container .footer-nav .menu-item a {
+    font-size: inherit;
+}
+
+@media screen and (max-width: 991px) {
+    #fs-footer {
+        padding: 1.5rem 0;
+        margin: 0 10%;
+    }
+    body #mw-mf-viewport {
+        height: auto;
+    }
+    #fs-footer .footer-container span.church-logo-container {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #fs-footer .footer-container span.church-logo-container {
+        float: right;
+        position: relative;
+        bottom: 80px;
+    }
+    #fs-footer {
+        margin-left: 11em;
+        padding: 0 1.25em 1.5em 1.25em;
+    }
+}
+
+/** tighten up the vertical spacing of footer list-items */
+
+#footer ul li {
+    padding-bottom: 0;
+}
+
+/**** MediaWiki:Common.css ************************************************/
+
+/* make sure missing pages remain colored correctly after visiting */
+
+a.new:visited, #p-personal a.new:visited {
+    color: #fcb34b !important;
+}
+
+form input {
+    /*    border: 1px solid !important;*/
+    border-color: #bab7b1;
+}
+
+#newHeading {
+    margin-top: 0;
+}
+
+/** Define spacing and # of columns based on screen size 
+ * e.g. https://beta.familysearch.org/wiki/en/England_Genealogy
+ */
+
+@media screen and (min-width: 1400px) {
+    .column-spacing-fullscreen {
+        column-count: 6;
+        padding-right: 9% !important;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+    .column-spacing-fullscreen {
+        column-count: 5;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width:1199px) {
+    .column-spacing-fullscreen {
+        column-count: 4;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width:899px) {
+    .column-spacing-fullscreen {
+        column-count: 3;
+    }
+}
+
+@media screen and (max-width:745px) {
+    .column-spacing-fullscreen {
+        column-count: 2;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .column-spacing-fullscreen {
+        column-count: 1;
+    }
+}
+
+/** Define spacing and # of columns based on screen size - however, 
+ * this section assumes that only half the screen is available for 
+ * the columns.  Even though the screen size may be 1400px, the 
+ * available space for the columns is half that, or 700px. 
+ * e.g. https://beta.familysearch.org/wiki/en/Asia
+ * e.g. https://beta.familysearch.org/wiki/en/North_America
+ */
+
+@media screen and (min-width: 1400px) {
+    .column-spacing-halfscreen {
+        column-count: 3;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+    .column-spacing-halfscreen {
+        column-count: 2;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width:1199px) {
+    .column-spacing-halfscreen {
+        column-count: 1;
+    }
+}
+
+.column-spacing-halfscreen li, .column-spacing-fullscreen li {
+    padding-right: 5px;
+}
+
+/*
+ * =========================================================================
+ * |                                                                       |
+ * | FsHeader files below here                                             |
+ * | (header.css)                                                          |
+ * |                                                                       |
+ * =========================================================================
+ */
+ 
+ /**
+ * You can comment AS MUCH AS YOU WANT in this document. All comments are 
+ * automatically stripped by the Resource Loader so that they don't add weight
+ * to the document.
+ * Start section comments with /****
+ * Start regular comments with /**
+ * Keep comments to 80 columns wide
+ *
+ * @FIXME To close up the whitespace above the tabs, set the margin-top for left-navigation 
+ * and right-navigation to only .5em and set a negative margin of -33px on #content
+ * 
+ * 
+ * Contents: 
+ * update w/ grep '/\*\*\*\* '  resources/header.css | awk -F* '{print " * " $5}'
+ * 
+*  Print styles 
+*  Typography 
+*  1. Type selectors (e.g., h1) and pseudo-elements (e.g., ::before). 
+*  Forms 
+*  Lists 
+*  2. Class Selectors (.foo), attributes selectors ([type=â€œradioâ€]) pseudo-classes (:hover 
+*  Navigation 
+*  side-nav-buttons "sign in" "free account" 
+*  3. ID selectors (e.g., #example). 
+*  !important overrides 
+*  up to line 2084 
+*  lines 2088 - 2179 
+*  lines 2183 - 3273 
+*  lines 3277 - 3358 
+*  lines 3362 - 3766
+ */
+
+/**** Print styles ***********************************************************/
+
+@media print {
+	form, input {
+		display: none!important;
+	}
+}
+
+/**** Typography *************************************************************/
+
+@font-face {
+	font-family: "Museo";
+	src: url('/wiki/public_html/Museo_Slab_500.otf') format("opentype");
+}
+
+@font-face {
+	font-family: "Proxima Nova Light";
+	src: url('/wiki/public_html/Proxima-Nova-Alt-Light.otf') format("opentype");
+}
+
+@font-face {
+	font-family: "Proxima Nova Condensed Light";
+	src: url('/wiki/public_html/Proxima-Nova-Condensed-Light.otf') format("opentype");
+}
+
+html, body {
+	font-family: Helvetica, Verdana, sans-serif;
+}
+
+.mw-body p, .mw-body-content p, p {
+	/*font-family: 'Proxima Nova Light', Verdana, sans-serif;  */
+	font-family: Verdana, sans-serif; 
+}
+
+/** important to override Vector */
+
+h1, h2 {
+	font-family: Museo, Helvetica, Verdana, serif!important;
+}
+
+h3, h4, h5, h6 {
+	font-family: Helvetica, Verdana, serif !important;
+}
+
+pre, code, tt, kbd, samp, .mw-code {
+	font-family: monospace, Courier;
+}
+
+@media print {
+	p {
+		margin: .5em;
+		page-break-inside: avoid;
+	}
+}
+
+/**** 1. Type selectors (e.g., h1) and pseudo-elements (e.g., ::before). *****/
+
+/** include padding and borders in determining box size 
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+html, body {
+	line-height: 1.6rem;
+	color: #333;
+}
+
+/** The page title (h1) and any h2 */
+
+#firstHeading, #content h2 {
+	line-height: 1.3;
+	border-bottom: 1px solid #aaa;
+}
+
+h3, h4, h5, h6 {
+	border-bottom: none;
+	color: #000;
+}
+
+/** we have to use the class selector so that Vector doesn't override us */
+
+.mw-body-content h1 {
+	font-size: 1.6rem!important;
+	color: #000;
+	margin-top: 0.125em; /* whitespace to sitenotice */
+}
+
+.mw-body-content h2 {
+	font-size: 1.5rem;
+	line-height: 1.3;
+	color: #000;
+}
+
+.mw-body-content h3 {
+	font-size: 1.4rem;
+	font-weight: bold;
+}
+
+.mw-body-content h4 {
+	font-size: 1.3rem;
+	font-weight: bold;
+}
+
+.mw-body-content h5 {
+	font-size: 1.2rem;
+	font-weight: normal;
+}
+
+.mw-body-content h6 {
+	font-size: 1.1em;
+	font-weight: normal;
+	font-style: italic;
+}
+
+#mw-head .vectorMenu h3 {
+	background-image: unset!important;
+}
+
+a {
+	-moz-transition: color .1s ease-in-out, background-color .1s ease-in-out;
+	-ms-transition: color .1s ease-in-out, background-color .1s ease-in-out;
+	-o-transition: color .1s ease-in-out, background-color .1s ease-in-out;
+	-webkit-transition: color .1s ease-in-out, background-color .1s ease-in-out;
+	transition: color .1s ease-in-out, background-color .1s ease-in-out;
+}
+
+/**** Forms ******************************************************************/
+
+/** We use the inputbox extension to create forms.
+* Can be found on pages such as
+* e.g. https://beta.familysearch.org/wiki/en/Template:Searchbox
+* e.g. https://beta.familysearch.org/wiki/en/Help:Creating_a_Page
+* e.g. https://beta.familysearch.org/wiki/en/Help:How_to_Create_an_Article
+*/
+
+#siteNotice {
+	font-size: 1em;
+}
+
+/*
+form input {
+	border-radius: 4px;
+	background-color: #fff;
+	border: 2px solid;
+	line-height: normal;
+}
+input[type=search], input[type=text], input[type=submit] {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+input[type="text"]:not(.et_pb_s) {
+	background-color: #fff!important;
+	border: 1px solid #c8c8c8!important;
+	-webkit-box-shadow: inset 0 3px 0 rgba(0, 0, 0, 0.05)!important;
+	-moz-box-shadow: inset 0 3px 0 rgba(0, 0, 0, 0.05)!important;
+	box-shadow: inset 0 3px 0 rgba(0, 0, 0, 0.05)!important;
+}
+input[type="text"]:not(.et_pb_s):focus, input[type="text"]:not(.et_pb_s):active {
+	border-color: #333;
+}
+input[type=number], input[type=email], input[type=url], input[type=search] {
+	padding: 0.1em;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+input[type=tel], input[type=color], input[type=password], input[type=datetime], input[type=datetime-local], input[type=date], input[type=month], input[type=time], input[type=week], input[type=text] {
+	font: 13.3333px Arial;
+	font-size: .875em;
+	border-image: initial;
+	color: #333;
+	box-shadow: none;
+	padding: 1.185em;
+	line-height: 1.275;
+	border: 1px solid #cccccc;
+	border-radius: 0;
+}
+*/
+/**** Lists ******************************************************************/
+
+/** make the Table of Contents a bit smaller */
+#toc li {
+	font-size: .9rem;
+}
+
+#bodyContent ol li {
+	line-height: 1.5rem;
+}
+/** Vector sets a list-style-image so we have to set it to none in order
+ * to make our discs black */
+
+
+ul li {
+	line-height: 1.25rem;
+	font-size: 1rem;
+	color: black!important;
+	list-style-image:none;
+}
+
+ol li {
+	line-height: 1.25rem;
+}
+
+
+.mw-body ul li, .mw-body-content ul li {
+	line-height: 1.5em;
+	font-size: 1rem;
+	color: #333;
+	list-style-image:none;
+}
+
+
+img, li, ul, form, label {
+	border: 0;
+	font-family: inherit;
+/*	font-size: 100%; */
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1.5em;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+
+/**** 2. Class Selectors (.foo), attributes selectors ([type=â€œradioâ€]) pseudo-classes (:hover */
+
+.container {
+	width: 100%;
+}
+
+.mw-body p, .mw-body-content, .mw-body-content p, p {
+	line-height: 1.5em;
+	font-size: 1rem;
+	color: #333;
+}
+
+/** when in mobile view, keep the search box from disappearing under the header */
+
+.clearfix:after .overlay, .overlay-enabled #mw-mf-page-center {
+	position: relative;
+}
+
+#content a:visited, #content a.external:visited {
+	color: #0b0080;
+}
+
+#content a:hover {
+	text-decoration: underline;
+}
+
+#content a:active {
+	color: #fcb34b;
+}
+
+#content a:focus {
+	outline: 1px dotted #333;
+}
+
+::selection {
+	background: #444;
+	color: #fff;
+}
+
+::-webkit-input-placeholder, :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder {
+	color: #999;
+}
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	clip: auto;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-weight: 700;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	position: absolute;
+	text-decoration: none;
+	text-transform: none;
+	top: 5px;
+	z-index: 100000;
+}
+
+/**** Navigation *************************************************************/
+
+/**
+ * Navigation was redone to copy the header2019 of the www site
+ * see https://discourse.equality-tech.com/t/fix-navigation-markup/976
+ * The navigation has the following elements, in order of appearance:
+ * header#header-2019     The top banner element
+ * nav#primaryNav    
+ * div.top            
+ * .right                 Container for secondary etc.
+ * nav#secondaryNav       Sign in and Register links
+ * nav#secondaryNav       Messages, Volunteer, Help links
+ * #mobileDrawerContainer
+ * #mobleDrawer           side-menu for mobile view
+ *
+ * #mw-head
+ * #p-personal            Userpage, Notifications / Alerts, Preferences etc.
+ * #left-navigation       Page and Talk tabs
+ * #right-navigation      Views, Actions, Search tabs
+ */
+
+/**** side-nav-buttons "sign in" "free account" ******************************/
+/* vertically bump the menu icons */
+div.right { margin-bottom:10px;}
+/* remove the underline for the logo H1*/
+.left h1 {border:unset;}
+
+.fs-button--small {
+	appearance: none;
+	-webkit-touch-callout: none;
+	background-color: #f5f4f1;
+	border-radius: 4px;
+	border: 1px solid #beb8a7;
+	color: #333;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1rem;
+	font-weight: normal;
+	line-height: 1;
+	padding: 0.607rem 1.429rem;
+	/* [1] */
+	position: relative;
+	text-decoration: none;
+	transition: padding 0.2s;
+	user-select: none;
+	vertical-align: middle;
+	white-space: nowrap;
+	text-align: center;
+	margin: 6px 20px;
+}
+
+.fs-button--small.is-loading:after, #global-footer .fs-button--small.is-loading:after, #langPickerModal .fs-button--small.is-loading:after, #helpFeedbackModal .fs-button--small.is-loading:after {
+	width: 16px;
+	height: 16px;
+	margin-top: 0;
+}
+
+.fs-button--small:hover {
+	text-decoration: none;
+	background-color: #fbfaf9;
+	color: #333;
+}
+
+.fs-button:active {
+	background-color: #e8e6e0;
+}
+
+.fs-button--recommended {
+	background-color: #3073dd;
+	border: 1px solid #246bdb;
+}
+
+
+
+/**** 3. ID selectors (e.g., #example). **************************************/
+
+
+
+.sub-menu::after {
+	left: 35px;
+	content: "";
+	position: absolute;
+	border-style: solid;
+	display: block;
+	z-index: 1001;
+	visibility: visible!important;
+	top: -15px;
+	margin-left: -16px;
+	border-width: 0 16px 16px;
+	border-color: #FFF transparent;
+}
+
+.sub-menu li {
+	text-align: left;
+}
+
+.sub-menu li a {
+	border-radius: 6px;
+	padding: 6px 20px;
+	display: inline-block;
+}
+
+.et_search_outer {
+	display: none!important;
+}
+
+@media all {
+	.screen-reader-text {
+		border: 0;
+		clip: rect(1px, 1px, 1px, 1px);
+		-webkit-clip-path: inset(50%);
+		-moz-clip-path: inset(50%);
+		clip-path: inset(50%);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute!important;
+		width: 1px;
+		word-wrap: normal!important;
+	}
+}
+
+html .mobile-menu-open body {
+	max-height: 100%;
+	overflow: hidden;
+	position: fixed !important;
+	top: 0 !important;
+	right: 260px !important;
+	width: 100vw;
+}
+
+
+/** on smaller window size, remove border of tables in order to clean up the look of the table.*/
+
+@media (max-width: 720px) {
+	.content table {
+		border: unset!important;
+		padding-top: 2.5rem;
+	}
+}
+
+/** 20190324 - fixes gap between tabs and main body. */
+
+#mw-navigation #mw-head {
+	top: 59px;
+	z-index: 0 !important;
+	/* fixes see-through dropdown menus */
+}
+
+#simpleSearch {
+	height: 1.6rem;
+}
+
+#mw-panel .portal {
+	padding: unset;
+	font-size: 1rem;
+}
+
+#mw-panel .portal .body {
+	margin-left: 1.25em;
+}
+
+
+/**** !important overrides ***************************************************/
+
+/** important because Vector only gives .2 padding-bottom 
+* need the #simpleSearch selector to only affect the desktop view */
+
+#simpleSearch #searchInput {
+	padding: 0.2em 0 0.5em 0.2em!important;
+}
+
+/** when in mobile view, stop skin Minerva from defining a small grey line above
+the header list items.*/
+
+nav ul li {
+	border-top: unset !important;
+}
+
+/** Set width of search box to 70%, so 'go' button stays inline. 
+ * To correct the ID name to 'search-box', edit the Searchbox template then this file */
+
+#bodySearchInputHomePageSearchBox {
+	width: 70%;
+}
+
+
+html {
+	font-size: 14px;
+}
+
+html[lang="zh"],html[lang="ja"],html[lang="ko"] {
+	font-size: 16px;
+}
+
+body {
+	color: #333331;
+	font-family: Verdana,Ayuthaya,'HanaMinBFont',sans-serif;
+	font-size: 1rem;
+	line-height: 1.625rem;
+}
+
+@font-face {
+	font-display:fallback;font-family: 'HanaMinBFont';
+	src: url("https://edge.fscdn.org/assets/components/fs-styles/assets/fonts/hanazono/HanaMinB-e09259bbfa3a57f7f9ac2cd8c77d01a9.ttf");
+	unicode-range: U+20000-2A6D6,U+2A700-2B734,U+2B820-2CEAF,U+2CEB0-2EBEF;
+}
+
+[lang="zh"],[lang="zh"] body,[lang="zh"] h1,[lang="zh"] h2,[lang="zh"] h3,[lang="zh"] h4,[lang="zh"] h5,[lang="zh"] h6,[lang="zh"] .fs-h1,[lang="zh"] .fs-h2,[lang="zh"] .fs-h3,[lang="zh"] .fs-h4,[lang="zh"] .fs-h5,[lang="zh"] .fs-h6 {
+	font-family: "é»‘é«”-ç¹","Heiti TC","åŽæ–‡ç»†é»‘","STXihei","å¾®è»Ÿæ­£é»‘é«”","Microsoft JengHei","ä¸­æ˜“é»‘ä½“","SimHei","HanaMinBFont",sans-serif;
+	letter-spacing: normal;
+	/* [1] */
+}
+
+[lang="ja"],[lang="ja"] body,[lang="ja"] h1,[lang="ja"] h2,[lang="ja"] h3,[lang="ja"] h4,[lang="ja"] h5,[lang="ja"] h6,[lang="ja"] .fs-h1,[lang="ja"] .fs-h2,[lang="ja"] .fs-h3,[lang="ja"] .fs-h4,[lang="ja"] .fs-h5,[lang="ja"] .fs-h6 {
+	font-family: "ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3","Hiragino Kaku Gothic Pro","ãƒ¡ã‚¤ãƒªã‚ª","Meiryo","ï¼­ï¼³ ã‚´ã‚·ãƒƒã‚¯","MS Gothic",sans-serif;
+	letter-spacing: normal;
+	/* [1] */
+}
+
+[lang="ko"],[lang="ko"] body,[lang="ko"] h1,[lang="ko"] h2,[lang="ko"] h3,[lang="ko"] h4,[lang="ko"] h5,[lang="ko"] h6,[lang="ko"] .fs-h1,[lang="ko"] .fs-h2,[lang="ko"] .fs-h3,[lang="ko"] .fs-h4,[lang="ko"] .fs-h5,[lang="ko"] .fs-h6 {
+	font-family: "Apple SD Gothic Neo","ì• í”Œê³ ë”•","AppleGothic","ë§‘ì€ ê³ ë”•","Malgun Gothic","êµ´ë¦¼","Gulim",sans-serif;
+	letter-spacing: normal;
+	/* [1] */
+}
+
+:root {
+	--fs-font-face-heading:"museo","Verdana","Ayuthaya","HanaMinBFont",serif;
+}
+
+/* */
+h1,h2,h3,h4,.fs-h1,.fs-h2,.fs-h3,.fs-h4 {
+	color: #000;
+	font-family: "museo","Verdana","Ayuthaya","HanaMinBFont",serif;
+	font-weight: normal;
+	margin: 0;
+}
+
+
+h1,.fs-h1 {
+	font-size: 2.143rem;
+	line-height: 2.5rem;
+}
+
+h2,.fs-h2 {
+	font-size: 1.857rem;
+	line-height: 2.22rem;
+}
+
+h3,.fs-h3 {
+	font-size: 1.571rem;
+	line-height: 1.95rem;
+	margin: 0 0 0.203125rem 0;
+}
+
+h4,.fs-h4 {
+	font-size: 1.286rem;
+	line-height: 1.625rem;
+}
+
+.fs-h1--campaign {
+	font-size: 2.571rem;
+	line-height: 2.875rem;
+}
+
+p {
+	font-size: 1rem;
+	line-height: 1.625rem;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+button {
+	font-family: Verdana,Ayuthaya,'HanaMinBFont',sans-serif;
+}
+
+small {
+	font-size: 0.857rem;
+	line-height: 1.35rem;
+	color: #666662;
+}
+
+ol,ul,li {
+	line-height: 1.625rem;
+	padding: 0;
+}
+
+ol,ul {
+	margin: 0 0 1.625rem 1.625rem;
+}
+
+li {
+	margin: 0;
+}
+
+
+.fs-button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	-webkit-touch-callout: none;
+	background-color: #f5f4f1;
+	border-radius: 4px;
+	border: 1px solid #beb8a7;
+	color: #333331;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1rem;
+	font-weight: normal;
+	line-height: 1;
+	padding: 0.607rem 1.429rem;
+	/* [1] */
+	position: relative;
+	text-decoration: none;
+	transition: padding 0.2s;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	vertical-align: middle;
+	white-space: nowrap;
+	/*------------------------------------* $RECOMMENDED_BUTTON \*------------------------------------*/
+	/*------------------------------------* $MINOR_BUTTON \*------------------------------------*/
+	/*------------------------------------* $DESTRUCTIVE_BUTTON \*------------------------------------*/
+	/*------------------------------------* $LARGE_BUTTON \*------------------------------------*/
+	/* * 1. Large button height should be 50px */
+	/*------------------------------------* $MINOR_INLINE_BUTTON \*------------------------------------*/
+	/* * The opposite of the small button,regular height,small width */
+	/*------------------------------------* $SMALL_BUTTON \*------------------------------------*/
+	/* * 1. Small button height should be 30px */
+	/*------------------------------------* $LOADING_ANIMATION \*------------------------------------*/
+	/** * Animations * * The `fs-button--loading` class will only work for buttons and anchor tags. Input tags * will not work. * * ##### Acceptable Use * * Disable the button while the <code>fs-button--loading</code> class is active. * * @section * @sectionof Buttons * * @example * <div class="row-fluid"> * <p class="span9"> * <small class="example__title">Loading - <code>fs-button--loading</code></small> * <button type="button" class="fs-button fs-button--recommended animation__toggle" data-animation="fs-button--loading" data-animation-for="fs-button--loading" data-animation-show="true"> * <span class="animation__show">Loading</span> * </button> * </p> * </div> * * @code * <p> * <button type="button" class="fs-button fs-button--loading">Loading</button> * <p> */
+}
+
+.fs-button:hover {
+	/* [3] */
+	background-color: #fbfaf9;
+	color: #333331;
+	text-decoration: none;
+}
+
+.fs-button:hover:disabled,.fs-button:hover.disabled {
+	background-color: #f5f4f1;
+	color: rgba(51,51,49,0.3);
+	text-decoration: none;
+}
+
+.fs-button:active {
+	background-color: #e8e6e0;
+}
+
+.fs-button:disabled,.fs-button.disabled {
+	cursor: not-allowed;
+	background-color: #f5f4f1;
+	border: 1px solid #cbc6b9;
+	color: rgba(51,51,49,0.3);
+}
+
+.fs-button:focus {
+	outline: auto 3px Highlight;
+	outline: auto 6px -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+.fs-button:focus:visited {
+	color: #333331;
+	/* [2] */
+	text-decoration: none;
+	outline-offset: -1px;
+	/* [4] */
+}
+
+.fs-button:after {
+	content: '';
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.fs-button--recommended {
+	background-color: #3073dd;
+	border: 1px solid #246bdb;
+	color: #fff;
+}
+
+.fs-button--recommended:hover {
+	/* [3] */
+	background-color: #3882f8;
+	color: #fff;
+}
+
+.fs-button--recommended:active {
+	background-color: #1f61c9;
+}
+
+.fs-button--recommended:focus,.fs-button--recommended:visited {
+	color: #fff;
+	/* [2] */
+}
+
+.fs-button--recommended:disabled:hover,.fs-button--recommended.disabled:hover {
+	color: rgba(51,51,49,0.3);
+}
+
+.fs-button--minor {
+	background-color: transparent;
+	color: #0060d7;
+	border-color: transparent;
+}
+
+.fs-button--minor:hover {
+	/* [3] */
+	background-color: transparent;
+	color: #0060d7;
+	text-decoration: underline;
+}
+
+.fs-button--minor:active {
+	background-color: transparent;
+	color: #0060d7;
+	text-decoration: underline;
+}
+
+.fs-button--minor:focus,.fs-button--minor:visited {
+	color: #0060d7;
+	/* [2] */
+}
+
+.fs-button--destructive {
+	background-color: #cc3227;
+	border: 1px solid #c23025;
+	color: #fff;
+}
+
+.fs-button--destructive:hover {
+	/* [3] */
+	background-color: #e64034;
+	color: #fff;
+}
+
+.fs-button--destructive:active {
+	background-color: #af180d;
+}
+
+.fs-button--destructive:focus,.fs-button--destructive:visited {
+	color: #fff;
+	/* [2] */
+}
+
+.fs-button--destructive:disabled:hover,.fs-button--destructive.disabled:hover {
+	color: rgba(51,51,49,0.3);
+}
+
+.fs-button--large {
+	border-radius: 5px;
+	padding: 1.143rem 1.429rem;
+	/* [1] */
+}
+
+.fs-button--inline {
+	padding: 0.607rem 0.071rem;
+	/* [1] */
+}
+
+.fs-button--small {
+	padding: 0.429rem 1.429rem;
+	/* [1] */
+}
+
+.fs-button--small.is-loading {
+	padding-right: 42px;
+}
+
+.fs-button--small.is-loading:after {
+	width: 16px;
+	height: 16px;
+	margin-top: 0;
+}
+
+.fs-button--loading {
+	padding-right: 47px;
+}
+
+.fs-button--loading:after {
+	background-size: contain;
+	height: 20px;
+	margin-top: -2px;
+	opacity: 1;
+	position: absolute;
+	right: 15px;
+	width: 20px;
+}
+
+.fs-subnav {
+	margin: 0 auto;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	/*------------------------------------* $MENU_ITEM \*------------------------------------*/
+	/*------------------------------------* $SECONDARY_NAV \*------------------------------------*/
+}
+
+.fs-subnav__container {
+	background: #fff;
+	border-bottom: 1px solid rgba(151,151,151,0.8);
+	position: relative;
+	height: 35px;
+	/* [1] */
+	box-sizing: border-box;
+}
+
+.fs-subnav__container:before {
+	border: 2px solid rgba(0,0,0,0.05);
+	bottom: -3px;
+	content: '';
+	left: 0;
+	position: absolute;
+	right: 0;
+}
+
+.fs-subnav > .fs-subnav__item:first-child {
+	margin-left: -10px;
+	/* [2] */
+}
+
+.fs-subnav__item {
+	background: transparent;
+	border-radius: 4px;
+	border: 0;
+	color: #666662;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1rem;
+	/* [3] */
+	line-height: 1.35rem;
+	margin-right: 1px;
+	padding: 4px 10px;
+	vertical-align: middle;
+	/*------------------------------------* $SPLIT_ITEM \*------------------------------------*/
+}
+
+.fs-subnav__item:active,.fs-subnav__item:focus,.fs-subnav__item:hover,.fs-subnav__item:visited {
+	color: #666662;
+	text-decoration: none;
+}
+
+.fs-subnav__item:hover,.fs-subnav__item--active {
+	background: #e1edc1;
+}
+
+.fs-subnav__item--split {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.fs-subnav__item--split:hover .fs-subnav__item {
+	background: #f1f8e3;
+}
+
+.fs-subnav__item--split .fs-subnav__item:first-child {
+	border-radius: 4px 0 0 4px;
+	margin-right: 2px;
+	float: left;
+}
+
+.fs-subnav__item--split .fs-subnav__item:last-child {
+	border-radius: 0 4px 4px 0;
+	padding: 4px 6px 4px 5px;
+	float: left;
+}
+
+.fs-subnav__item--split .fs-subnav__item:hover {
+	background: #e1edc1;
+}
+
+.fs-subnav--secondary {
+	float: right;
+}
+
+.fs-subnav--secondary .fs-subnav__item:last-child {
+	margin-right: -10px;
+	/* [2] */
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+
+@-moz-keyframes rotate {
+	from {
+		-webkit-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	to {
+		-webkit-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes rotate {
+	from {
+		-webkit-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	to {
+		-webkit-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@-o-keyframes rotate {
+	from {
+		-webkit-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	to {
+		-webkit-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes rotate {
+	from {
+		-webkit-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	to {
+		-webkit-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@media (prefers-reduced-motion),(prefers-reduced-motion:reduce) {
+}
+
+@media (prefers-reduced-motion),(prefers-reduced-motion:reduce) {
+}
+
+@font-face {
+	font-display:fallback;font-family: 'museo';
+	src: url("https://edge.fscdn.org/assets/components/hf/assets/fonts/museo_slab_500-webfont-3ac51e6133a399c50742d86e7cd95ca2.woff2") format('woff2'),url("https://edge.fscdn.org/assets/components/hf/assets/fonts/museo_slab_500-webfont-ea30679c1240ee2eaebfde6886e41e99.woff") format('woff'),url("https://edge.fscdn.org/assets/components/hf/assets/fonts/museo_slab_500-webfont-6234821baf389728b0d2c89f377b14af.ttf") format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-display:fallback;font-family: 'museo_cyrl';
+	src: url("https://edge.fscdn.org/assets/components/hf/assets/fonts/MuseoCyrl_500-webfont-cde851ec46277f13c1f5f2e7e468f8a2.woff") format('woff'),url("https://edge.fscdn.org/assets/components/hf/assets/fonts/MuseoCyrl_500-webfont-f45168ac79378362859776af2766351e.ttf") format('truetype'),url("https://edge.fscdn.org/assets/components/hf/assets/fonts/MuseoCyrl_500-webfont-fed28a5f16fd802cdd189d82686efb30.svg#museo_cyrl_500regular") format('svg');
+	font-style: normal;
+}
+
+:root {
+	--fs-font-face-heading:Verdana,Ayuthaya,'HanaMinBFont',sans-serif;}
+
+html,body {
+	height: 100%;
+	margin: 0;
+}
+
+body:before {
+	content: "desktop";
+	display: none;
+	/* Prevent from displaying. */
+}
+
+#wrapper {
+	display: -webkit-flex;
+	display: flex;
+	min-height: 100%;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	background: #fff;
+	width: 940px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#wrapper.full-width {
+	width: 100%;
+}
+
+@media (min-width: 1200px) {
+	#wrapper {
+		width:1170px;
+	}
+}
+
+@media (min-width: 768px) and (max-width:979px) {
+	#wrapper {
+		width:724px;
+	}
+}
+
+@media (max-width: 767px) {
+	#wrapper {
+		width:auto;
+	}
+}
+
+@media print {
+	#wrapper.better-print-ex {
+		display: initial;
+	}
+}
+
+.full-width-wrap {
+	max-width: 1170px;
+	max-height: 73px;
+	margin: 0 auto 7px;
+	padding: 0 10px 0;
+}
+
+main {
+	-webkit-flex-grow: 1;
+	flex-grow: 1;
+}
+
+@-moz-keyframes rotate {
+	from {
+		-webkit-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	to {
+		-webkit-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes rotate {
+	from {
+		-webkit-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	to {
+		-webkit-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@-o-keyframes rotate {
+	from {
+		-webkit-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	to {
+		-webkit-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes rotate {
+	from {
+		-webkit-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	to {
+		-webkit-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@media (prefers-reduced-motion),(prefers-reduced-motion:reduce) {
+}
+
+@media (prefers-reduced-motion),(prefers-reduced-motion:reduce) {
+}
+
+#header2019 {
+	border-bottom: 1px solid rgba(102,102,98,0.18);
+	padding: 8px 24px 4px 24px;
+	background-color: #fff;
+	z-index: 10;
+}
+
+#header2019 button {
+	border: 0;
+	font-size: 1em;
+	border-radius: 4px;
+	cursor: pointer;
+	color: #000;
+	background-color: initial;
+	/* width: 60px; */
+}
+
+#header2019 button:hover {
+	background-color: #e1ebc5;
+}
+
+#header2019 .highlight {
+	letter-spacing: 0.0125em;
+	color: #0060d7;
+	text-transform: uppercase;
+	padding: 9px 8px;
+}
+
+#header2019 .highlight:visited {
+	color: #0060d7;
+}
+
+#header2019 .highlight:hover {
+	background-color: #f2f7ff;
+	text-decoration: none;
+}
+
+#header2019 .highlight.border {
+	border: 1px solid #0060d7;
+	padding: 9px 16px;
+	border-radius: 4px;
+}
+
+#header2019 .top {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	/* left nav on the left;right nav on the right */
+	-webkit-align-items: flex-end;
+	align-items: flex-end;
+}
+
+#header2019 .top button {
+	padding: 5px 8px;
+	margin: 0 2px;
+}
+
+#header2019 .left {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: flex-end;
+	align-items: flex-end;
+	/* vertical align bottom */
+}
+
+#header2019 .logo {
+	background: url("https://edge.fscdn.org/assets/components/hf/assets/img/logos/tree-logotype-0x-5e2a1017e994b22c3c3c0b557a7e0304.png") no-repeat transparent;
+	background-size: contain;
+	display: block;
+	width: 132px;
+	height: 33.8px;
+	margin-top: -10px;
+}
+
+#header2019 .logo.beta {
+	background: url("https://edge.fscdn.org/assets/components/hf/assets/img/logos/tree-logotype-beta-ae72e8657b3e4ebba7ff570820821b2a.png") no-repeat transparent;
+	background-size: contain;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),(min-resolution:192dpi) {
+	#header2019 .logo {
+		background:url("https://edge.fscdn.org/assets/components/hf/assets/img/logos/tree-logotype-2x-750ccbd315132e50d07ad40c8e639a34.png") no-repeat transparent;
+		background-size: contain;
+		/* margin-top: -50px; */
+	}
+}
+
+#header2019 #primaryNav {
+	margin-left: 10px;
+}
+
+#header2019 .nav-menu-parent {
+	position: relative;
+	/* width: 55px; */
+}
+
+#header2019 .primary-nav-item {
+	display: inline-block;
+	margin-bottom: -2px;
+}
+
+#header2019 #helpLink,#header2019 #messagesLink,#header2019 #userMenuLink {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
+#header2019 #helpLink img,#header2019 #messagesLink img,#header2019 #userMenuLink img {
+	margin: 8px;
+	width:20px;
+}
+
+#header2019 #messagesLink {
+	position: relative;
+}
+
+#header2019 #messagesLink .unread-message-badge {
+	position: absolute;
+	display: none;
+	width: 8px;
+	height: 8px;
+	border-radius: 5px;
+	background-color: #f00;
+	left: 23px;
+	top: 4px;
+}
+
+#header2019 .user-icon {
+	display: block;
+	width: 24px;
+	height: 24px;
+	background-color: #e3e3e0;
+	border-radius: 24px;
+	margin-right: 4px;
+	box-sizing: border-box;
+	line-height: 1em;
+	text-align: center;
+}
+
+#header2019 span.user-icon {
+	padding: 5px;
+}
+
+#primaryNav, #secondaryNav {
+	background-color:  white;
+}
+
+#header2019 #secondaryNav {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	margin-bottom: -10px;
+}
+
+#header2019 #secondaryNav a {
+	margin: 0 4px;
+	border-radius: 4px;
+}
+
+#header2019 #secondaryNav a:not(.submenu-link):not(.highlight) {
+	color: #000;
+	padding: 5px 8px;
+}
+
+#header2019 #secondaryNav a:not(.submenu-link):not(.highlight):hover {
+	text-decoration: none;
+	background-color: #e1ebc5;
+}
+
+#header2019 #secondaryNav.li-nav {
+	margin-bottom: -6px;
+}
+
+#header2019 .top .submenu {
+	display: none;
+	position: absolute;
+	list-style-type: none;
+	box-shadow: 0px 2px 2px rgba(0,0,0,0.12),0px 0px 2px rgba(0,0,0,0.12),0px 5px 6px rgba(0,0,0,0.12);
+	z-index: 950;
+	background-color: #fff;
+	min-width: 190px;
+	left: -4px;
+	top: 42px;
+	margin: 0;
+}
+
+#header2019 .top .submenu-item:hover {
+	background: #efefec;
+}
+
+#header2019 .top .submenu-link {
+	padding: 8px 16px 12px 16px;
+	color: #333331;
+	display: block;
+}
+
+#header2019 .top .submenu-link:hover {
+	text-decoration: none;
+}
+
+#header2019 .submenu-divider {
+	border-top: 1px solid #ddd;
+}
+
+#header2019 #hamburgerLink {
+	display: none;
+	width:40px;
+}
+
+#header2019 .admin-role-link {
+	cursor: pointer;
+}
+
+#header2019 .admin-role-link strong {
+	font-size: 0.8em;
+	margin-right: 10px;
+}
+
+@media (max-width: 1023px) {
+	#header2019:not(:lang(ru)) #primaryNav {
+		display:none;
+	}
+
+	#header2019:not(:lang(ru)) .nav-trigger-text {
+		display: none;
+	}
+
+	#header2019:not(:lang(ru)) .top #userMenuLink,#header2019:not(:lang(ru)) .top #signInLink,#header2019:not(:lang(ru)) .top #registerLink {
+		display: none;
+	}
+
+	#header2019:not(:lang(ru)) #hamburgerLink {
+		display: block;
+	}
+
+	#header2019:not(:lang(ru)) #hamburgerLink img {
+		margin: 8px;
+	}
+}
+
+@media (max-width: 1279px) {
+	#header2019:lang(ru) #primaryNav {
+		display:none;
+	}
+
+	#header2019:lang(ru) .nav-trigger-text {
+		display: none;
+	}
+
+	#header2019:lang(ru) #helpLink img,#header2019:lang(ru) #messagesLink img {
+		margin-right: 0px;
+	}
+
+	#header2019:lang(ru) .top #userMenuLink,#header2019:lang(ru) .top #signInLink,#header2019:lang(ru) .top #registerLink {
+		display: none;
+	}
+
+	#header2019:lang(ru) #hamburgerLink {
+		display: block;
+	}
+
+	#header2019:lang(ru) #hamburgerLink img {
+		margin-bottom: 3px;
+	}
+}
+
+#header2019.role-indicator-mode {
+	padding-top: 52px;
+}
+
+.fs-subnav__container {
+	padding: 0 24px;
+}
+
+@media (max-width: 1023px) {
+	:not(:lang(ru)) .fs-subnav__container {
+		display:none;
+	}
+}
+
+@media (max-width: 1279px) {
+	:lang(ru) .fs-subnav__container {
+		display:none;
+	}
+}
+
+#hf-floating-header-wrapper {
+	background-color: #fff;
+	position: relative;
+	z-index: 10;
+	top: 0;
+}
+
+.locale-zh .sub-menu li a,.locale-ja .sub-menu li a,.locale-ko .sub-menu li a {
+	white-space: nowrap;
+}
+
+.locale-zh,.locale-zh body,.locale-zh body.verdana,.locale-zh body .serif,.locale-zh #global-header,.locale-zh #global-footer {
+	font-family: "é»‘é«”-ç¹","Heiti TC","åŽæ–‡ç»†é»‘","STXihei","å¾®è»Ÿæ­£é»‘é«”","Microsoft JengHei","ä¸­æ˜“é»‘ä½“","SimHei","HanaMinBFont",sans-serif;
+}
+
+.locale-ja,.locale-ja body,.locale-ja body.verdana,.locale-ja body .serif,.locale-ja #global-header,.locale-ja #global-footer {
+	font-family: "ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3","Hiragino Kaku Gothic Pro","ãƒ¡ã‚¤ãƒªã‚ª","Meiryo","ï¼­ï¼³ ã‚´ã‚·ãƒƒã‚¯","MS Gothic",sans-serif;
+}
+
+.locale-ko,.locale-ko body,.locale-ko body.verdana,.locale-ko body .serif,.locale-ko #global-header,.locale-ko #global-footer {
+	font-family: "Apple SD Gothic Neo","ì• í”Œê³ ë”•","AppleGothic","ë§‘ì€ ê³ ë”•","Malgun Gothic","êµ´ë¦¼","Gulim",sans-serif;
+}
+
+.locale-ru h1,.locale-ru h2,.locale-ru h3,.locale-ru h4,.locale-ru h5,.locale-ru h6 {
+	text-rendering: auto;
+	font-weight: 500;
+}
+
+.locale-ru .serif {
+	font-family: museo_cyrl,sans-serif;
+}
+
+.ignore-cjk {
+	font-family: helvetica,sans-serif;
+}
+
+.serif,.locale-zh .serif.ignore-cjk,.locale-ja .serif.ignore-cjk,.locale-ko .serif.ignore-cjk {
+	font-family: museo,sans-serif;
+}
+
+.show-zh,.show-ja,.show-ko,.show-en,.show-es,.show-pt,.show-de,.show-fr,.show-it,.show-ru {
+	display: none;
+}
+
+.locale-zh .show-zh,.locale-ja .show-ja,.locale-ko .show-ko,.locale-en .show-en,.locale-es .show-es,.locale-pt .show-pt,.locale-de .show-de,.locale-fr .show-fr,.locale-it .show-it,.locale-ru .show-ru {
+	display: inherit;
+}
+
+.locale-zh .hide-zh,.locale-ja .hide-ja,.locale-ko .hide-ko,.locale-en .hide-en,.locale-es .hide-es,.locale-pt .hide-pt,.locale-de .hide-de,.locale-fr .hide-fr,.locale-it .hide-it,.locale-ru .hide-ru {
+	display: none !important;
+	/* This should overwrite any other display setting */
+}
+
+.sr-offscreen {
+	position: absolute;
+	top: -10000px;
+}
+
+.sr-offscreen:focus {
+	top: 0;
+}
+
+.hf-hide {
+	display: none !important;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+#global-header .utility-trigger:after {
+	content: '';
+	border-left: 3px solid transparent;
+	border-right: 3px solid transparent;
+	border-top: 7px solid #000;
+	margin-left: 5px;
+	display: inline-block;
+	opacity: 1;
+}
+
+@media screen and (min-width: 992px) {
+	.dropdown-wedge:before,.dropdown-wedge:after {
+		left:35px;
+		content: "";
+		position: absolute;
+		border-style: solid;
+		display: block;
+		width: 0;
+		z-index: 1001;
+	}
+
+	.dropdown-wedge:before {
+		top: -16px;
+		margin-left: -16px;
+		border-width: 0 16px 16px;
+		border-color: #cdcdcd rgba(0,0,0,0);
+	}
+
+	.dropdown-wedge:after {
+		top: -15px;
+		margin-left: -15px;
+		border-width: 0 15px 15px;
+		border-color: #fff rgba(0,0,0,0);
+	}
+
+	.dropdown-wedge.dark:after {
+		border-color: #454545 rgba(0,0,0,0);
+	}
+
+	.dropdown-wedge.dark:before {
+		border-width: 0;
+	}
+
+	.dropdown-wedge.right:before {
+		left: auto;
+		right: 35px;
+	}
+
+	.dropdown-wedge.right:after {
+		left: auto;
+		right: 36px;
+	}
+}
+
+.banner-dropdown-wedge:before,.banner-dropdown-wedge:after {
+	left: 167px;
+	content: "";
+	position: absolute;
+	border-style: solid;
+	display: block;
+	width: 0;
+	z-index: 1001;
+}
+
+.banner-dropdown-wedge:before {
+	top: -16px;
+	margin-left: -16px;
+	border-width: 0 16px 16px;
+	border-color: #cdcdcd rgba(0,0,0,0);
+}
+
+.banner-dropdown-wedge:after {
+	top: -15px;
+	margin-left: -15px;
+	border-width: 0 15px 15px;
+	border-color: #fff rgba(0,0,0,0);
+}
+
+.banner-dropdown-wedge.dark:after {
+	border-color: #454545 rgba(0,0,0,0);
+}
+
+.banner-dropdown-wedge.dark:before {
+	border-width: 0;
+}
+
+.banner-dropdown-wedge.right:before {
+	left: auto;
+	right: 35px;
+}
+
+.banner-dropdown-wedge.right:after {
+	left: auto;
+	right: 36px;
+}
+
+@-moz-keyframes rotate {
+	from {
+		-webkit-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	to {
+		-webkit-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes rotate {
+	from {
+		-webkit-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	to {
+		-webkit-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@-o-keyframes rotate {
+	from {
+		-webkit-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	to {
+		-webkit-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes rotate {
+	from {
+		-webkit-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	to {
+		-webkit-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@media (prefers-reduced-motion),(prefers-reduced-motion:reduce) {
+}
+
+@media (prefers-reduced-motion),(prefers-reduced-motion:reduce) {
+}
+
+
+@media screen and (min-width: 992px) and (max-width:1199px) {
+	.locale-de #global-header .primary-nav,.locale-ru #global-header .primary-nav,.locale-fr #global-header .primary-nav,.locale-pt #global-header .primary-nav,.locale-zh #global-header .primary-nav,.locale-ja #global-header .primary-nav,.locale-ko #global-header .primary-nav {
+		bottom:2px;
+	}
+
+	.locale-fr #global-header .primary-nav-link,.locale-pt #global-header .primary-nav-link {
+		font-size: 14px;
+	}
+
+	.locale-ru #global-header .primary-nav-link,.locale-de #global-header .primary-nav-link {
+		font-size: 13px;
+	}
+
+	#global-header .primary-nav-item {
+		margin-right: 0px;
+	}
+
+	#global-header .primary-nav-links {
+		padding-bottom: 2px;
+	}
+
+	.locale-ru #global-header .nav-links-wrapper.signed-out,.locale-de #global-header .nav-links-wrapper.signed-out {
+		margin-right: 120px;
+	}
+
+	.locale-es #global-header .nav-links-wrapper.signed-out,.locale-pt #global-header .nav-links-wrapper.signed-out,.locale-fr #global-header .nav-links-wrapper.signed-out {
+		margin-right: 60px;
+	}
+
+	.locale-ru #global-header .sign-in-link,.locale-de #global-header .sign-in-link,.locale-fr #global-header .sign-in-link,.locale-pt #global-header .sign-in-link {
+		padding-left: 4px;
+		padding-right: 4px;
+		font-size: 14px;
+	}
+
+	.locale-ru #global-header .sign-in-link,.locale-de #global-header .sign-in-link {
+		font-size: 13px;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	body:before {
+		content:"tablet";
+	}
+
+	#wrapper.full-width #global-header.logged-out .primary-nav-wrapper {
+		margin: 0 0 10px;
+	}
+
+	#wrapper.full-width #global-header.logged-out .primary-nav-wrapper .logo-container {
+		left: 15px;
+		top: 10px;
+	}
+
+	#wrapper .fs-subnav__container {
+		display: none;
+	}
+
+	#wrapper .fs-subnav__container.subnav-show-mobile {
+		display: block;
+		height: auto;
+	}
+
+	#wrapper .fs-subnav__container.subnav-show-mobile .hf-top-subnav {
+		-webkit-transform: none;
+		-webkit-transform: none;
+		transform: none;
+		padding: 1px 0;
+		top: auto;
+	}
+
+	#wrapper .fs-subnav__container.subnav-show-mobile .hf-top-subnav:before {
+		content: initial;
+	}
+
+	#wrapper .fs-subnav__container.subnav-show-mobile .hf-top-subnav .fs-subnav__item {
+		margin: 3px 0;
+		font-size: 1rem;
+	}
+
+	#wrapper .fs-subnav__container.subnav-show-mobile .hf-top-subnav .fs-subnav__item:first-child {
+		margin-left: 0;
+	}
+
+	#wrapper .fs-subnav__container.subnav-show-mobile .hf-top-subnav .fs-subnav--secondary {
+		display: none;
+	}
+
+	#global-header .register-link {
+		background-color: #3073dd;
+		border: 1px solid #246bdb;
+		color: #fff;
+	}
+
+	#global-header .sign-in-link {
+		padding: 0.429rem 1.429rem;
+		background: #f5f4f1;
+		border-color: #beb8a7;
+		color: #333331;
+		font-size: 1rem;
+		margin-right: 11px;
+	}
+
+	#global-header .primary-nav-wrapper {
+		height: 53px;
+		margin-top: 3px;
+		margin-bottom: 2px;
+	}
+
+	#global-header .primary-nav-wrapper .logo-container {
+		vertical-align: middle;
+	}
+
+	#global-header .primary-nav-wrapper .enter-site {
+		display: none;
+	}
+
+	#global-header .primary-nav-wrapper .nav-links-wrapper {
+		margin-left: 0;
+	}
+
+	#global-header .mobile-drawer-menu {
+		display: table-cell;
+		vertical-align: bottom;
+		position: relative;
+	}
+
+	#global-header .mobile-drawer-menu #mobile-top-nav {
+		box-sizing: border-box;
+		display: inline-block;
+		vertical-align: bottom;
+		height: 62px;
+		padding: 5px 2% 0 5px;
+		width: calc(100% - 77px);
+		overflow: hidden;
+	}
+
+	#global-header .mobile-drawer-menu #mobile-top-list {
+		margin: 0;
+		text-align: justify;
+	}
+
+	#global-header .mobile-drawer-menu #mobile-top-list:after {
+		width: 100%;
+		content: '';
+		display: inline-block;
+	}
+
+	#global-header .mobile-drawer-menu .mobile-top-item .mobile-top-link {
+		display: block;
+		vertical-align: bottom;
+		padding: 2px 23px;
+		cursor: pointer;
+		border: none;
+		background-color: transparent;
+	}
+
+	#global-header .mobile-drawer-menu .mobile-top-item .mobile-top-link:focus {
+		outline-offset: 2px;
+	}
+
+	#global-header .mobile-drawer-menu .mobile-top-item .mobile-top-link:visited,#global-header .mobile-drawer-menu .mobile-top-item .mobile-top-link:hover {
+		color: #666662;
+	}
+
+	#global-header .mobile-drawer-menu .mobile-top-item .mobile-top-linka:hover {
+		text-decoration-color: #666662;
+		text-decoration: underline;
+	}
+
+	#global-header .mobile-drawer-menu .mobile-top-item .mobile-top-link:before {
+		content: '';
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-color: transparent;
+		margin: auto;
+		display: block;
+		height: 28px;
+		width: 28px;
+		background-position: center center;
+	}
+
+	#global-header .mobile-drawer-menu .mobile-top-item .mobile-top-link.logo-mobile {
+		display: block;
+		height: 52px;
+		padding: 0;
+	}
+
+	#global-header .mobile-drawer-menu .mobile-top-item .mobile-top-link .mobile-top-text {
+		color: #666662;
+		font-size: 1rem;
+	}
+
+	#global-header .mobile-drawer-menu .mobile-top-item.active .mobile-top-link,#global-header .mobile-drawer-menu .mobile-top-item.active .mobile-top-link:visited,#global-header .mobile-drawer-menu .mobile-top-item.active .mobile-top-link:hover {
+		color: #333331;
+		font-weight: bold;
+	}
+
+	#global-header .mobile-drawer-menu .mobile-top-item.active .mobile-top-linka:hover {
+		text-decoration-color: #333331;
+	}
+
+	#global-header .mobile-drawer-menu .mobile-top-item.active .mobile-top-link .mobile-top-text {
+		color: #333331;
+		font-weight: bold;
+	}
+
+	#global-header .mobile-drawer-menu .mobile-top-item {
+		display: inline-block;
+		vertical-align: text-bottom;
+	}
+
+	#global-header .mobile-drawer-menu .mobile-top-item .hamburger-icon {
+		position: absolute;
+		top: 11px;
+		right: 10px;
+	}
+
+	#global-header .mobile-drawer-menu #mt-frontier-tree:before {
+		background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%0A%09%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2227px%22%20height%3D%2221px%22%20viewBox%3D%220%200%2027%2021%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cg%3E%0A%09%3Cg%20id%3D%22XMLID_1_%22%3E%0A%09%09%3Cg%3E%0A%09%09%09%3Crect%20x%3D%221%22%20y%3D%227%22%20fill%3D%22%23666662%22%20width%3D%226%22%20height%3D%226%22/%3E%0A%09%09%09%3Cpath%20fill%3D%22%23666662%22%20d%3D%22M6.1%2C7.9v4.2H1.9V7.9H6.1%20M7%2C6.1H1C0.504%2C6.1%2C0.1%2C6.504%2C0.1%2C7v6c0%2C0.496%2C0.404%2C0.9%2C0.9%2C0.9h6%0A%09%09%09%09c0.496%2C0%2C0.9-0.404%2C0.9-0.9V7C7.9%2C6.504%2C7.496%2C6.1%2C7%2C6.1L7%2C6.1z%22/%3E%0A%09%09%3C/g%3E%0A%09%09%3Cg%3E%0A%09%09%09%3Crect%20x%3D%2219%22%20y%3D%221%22%20fill%3D%22%23666662%22%20width%3D%226%22%20height%3D%226%22/%3E%0A%09%09%09%3Cpath%20fill%3D%22%23666662%22%20d%3D%22M24.1%2C1.9v4.2H19.9V1.9H24.1%20M25%2C0.1h-6c-0.496%2C0-0.9%2C0.404-0.9%2C0.9v6c0%2C0.496%2C0.404%2C0.9%2C0.9%2C0.9h6%0A%09%09%09%09c0.496%2C0%2C0.9-0.404%2C0.9-0.9V1C25.9%2C0.504%2C25.496%2C0.1%2C25%2C0.1L25%2C0.1z%22/%3E%0A%09%09%3C/g%3E%0A%09%09%3Cg%3E%0A%09%09%09%3Crect%20x%3D%2219%22%20y%3D%2213%22%20fill%3D%22%23666662%22%20width%3D%226%22%20height%3D%226%22/%3E%0A%09%09%09%3Cpath%20fill%3D%22%23666662%22%20d%3D%22M24.1%2C13.9v4.2H19.9v-4.2H24.1%20M25%2C12.1h-6c-0.496%2C0-0.9%2C0.404-0.9%2C0.9v6c0%2C0.496%2C0.404%2C0.9%2C0.9%2C0.9h6%0A%09%09%09%09c0.496%2C0%2C0.9-0.404%2C0.9-0.9v-6C25.9%2C12.504%2C25.496%2C12.1%2C25%2C12.1L25%2C12.1z%22/%3E%0A%09%09%3C/g%3E%0A%09%09%3Cline%20fill%3D%22none%22%20stroke%3D%22%23666662%22%20stroke-width%3D%222%22%20stroke-miterlimit%3D%2210%22%20x1%3D%228%22%20y1%3D%2210%22%20x2%3D%2213%22%20y2%3D%2210%22/%3E%0A%09%09%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23666662%22%20stroke-width%3D%222%22%20stroke-miterlimit%3D%2210%22%20d%3D%22M18%2C16h-4.75C13.113%2C16%2C13%2C15.887%2C13%2C15.75V4.25%0A%09%09%09C13%2C4.113%2C13.113%2C4%2C13.25%2C4H18%22/%3E%0A%09%09%3Crect%20fill%3D%22none%22%20width%3D%2227%22%20height%3D%2221%22/%3E%0A%09%3C/g%3E%0A%3C/g%3E%0A%3C/svg%3E%0A");
+	}
+
+	#global-header .mobile-drawer-menu #mt-search:before {
+		background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2231%22%20height%3D%2221%22%20viewBox%3D%220%200%2031%2021%22%3E%3Cg%20id%3D%22Layer_2%22%20data-name%3D%22Layer%202%22%3E%3Cg%20id%3D%22Art%22%3E%3Cpath%20d%3D%22M29.55%2C14.91a1.36%2C1.36%2C0%2C0%2C1-1-.4L25.09%2C11A1.36%2C1.36%2C0%2C0%2C1%2C27%2C9.09l3.5%2C3.5a1.36%2C1.36%2C0%2C0%2C1-1%2C2.32Z%22%20style%3D%22fill%3A%23666662%22/%3E%3Cpath%20d%3D%22M22%2C12a6%2C6%2C0%2C1%2C1%2C6-6A6%2C6%2C0%2C0%2C1%2C22%2C12Zm0-9.75A3.75%2C3.75%2C0%2C1%2C0%2C25.75%2C6%2C3.75%2C3.75%2C0%2C0%2C0%2C22%2C2.25Z%22%20style%3D%22fill%3A%23666662%22/%3E%3Cpath%20d%3D%22M1.63%2C20.9A1.63%2C1.63%2C0%2C0%2C1%2C.09%2C19.3v-.84c0-.34.25-.48.56-.66l.2-.12c.4-.23%2C1.69-.83%2C1.7-.84l.54%2C0V6.54A2.4%2C2.4%2C0%2C0%2C1%2C5.44%2C4.1h8.69l-.06.22a4%2C4%2C0%2C0%2C0-.19%2C1.3c0%2C.09%2C0%2C.17%2C0%2C.25v.06h-9V17.1h16.2v-3.5h1.85v3.21l0%2C0s1.26.6%2C1.66.84l.2.12c.31.17.56.31.56.65v.84a1.63%2C1.63%2C0%2C0%2C1-1.53%2C1.6Zm8.29-2A1%2C1%2C0%2C0%2C0%2C11%2C20h4.1a1%2C1%2C0%2C0%2C0%2C1-1.08v-.08H9.92Z%22%20style%3D%22fill%3A%23666662%22/%3E%3Crect%20width%3D%2231%22%20height%3D%2221%22%20style%3D%22fill%3Anone%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+	}
+
+	#global-header .mobile-drawer-menu #mt-memories:before {
+		background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2228%22%20height%3D%2218%22%20viewBox%3D%220%200%2028%2018%22%3E%3Cg%20id%3D%22Layer_2%22%20data-name%3D%22Layer%202%22%3E%3Cg%20id%3D%22Art%22%3E%3Cpath%20d%3D%22M2.8%2C17.88a.65.65%2C0%2C0%2C1-.48-.21.71.71%2C0%2C0%2C1-.2-.5v-.29H2a1.38%2C1.38%2C0%2C0%2C1%2C0-2.75h.13V11.88H2A1.31%2C1.31%2C0%2C0%2C1%2C.78%2C10.5%2C1.31%2C1.31%2C0%2C0%2C1%2C2%2C9.13h.13V6.88H2A1.31%2C1.31%2C0%2C0%2C1%2C.78%2C5.5%2C1.31%2C1.31%2C0%2C0%2C1%2C2%2C4.13h.13V4C2.13%2C2.17%2C4.21.13%2C7%2C.13H27.22a.62.62%2C0%2C0%2C1%2C.47.21.7.7%2C0%2C0%2C1%2C.19.5V16.14a.76.76%2C0%2C0%2C1-.2.52.59.59%2C0%2C0%2C1-.46.22H25.13l0-13.93c0-.71-.31-1.07-.92-1.07H7A2.21%2C2.21%2C0%2C0%2C0%2C4.63%2C4v.13H22.25a.57.57%2C0%2C0%2C1%2C.45.19.74.74%2C0%2C0%2C1%2C.18.5V17.17a.76.76%2C0%2C0%2C1-.18.5.57.57%2C0%2C0%2C1-.45.2ZM16%2C11.47a2.72%2C2.72%2C0%2C0%2C1-1.87%2C1.16l-.1%2C0v.18l.07%2C0%2C1.75.81a1.06%2C1.06%2C0%2C0%2C1%2C.56.66s.22.82.23.89-.62.52-2%2C.61v.25h2.09a1.38%2C1.38%2C0%2C0%2C0%2C1.38-1.37V7.25a1.38%2C1.38%2C0%2C0%2C0-1.37-1.37H9.25A1.38%2C1.38%2C0%2C0%2C0%2C7.88%2C7.25v7.48A1.38%2C1.38%2C0%2C0%2C0%2C9.25%2C16.1h3.69v-.25c-2.59%2C0-3.67-.41-3.67-.63%2C0-.06.23-.86.23-.86a1.06%2C1.06%2C0%2C0%2C1%2C.56-.67l1.75-.81.07%2C0v-.18l-.1%2C0a2.73%2C2.73%2C0%2C0%2C1-1.87-1.16%2C1.35%2C1.35%2C0%2C0%2C0%2C.66-.48%2C2%2C2%2C0%2C0%2C0%2C.25-1.56%2C1.42%2C1.42%2C0%2C0%2C1%2C0-.35A1.49%2C1.49%2C0%2C0%2C1%2C11.25%2C8%2C2.37%2C2.37%2C0%2C0%2C1%2C13%2C7.37%2C2.37%2C2.37%2C0%2C0%2C1%2C14.69%2C8a1.47%2C1.47%2C0%2C0%2C1%2C.43%2C1.07%2C1.49%2C1.49%2C0%2C0%2C1%2C0%2C.37A2%2C2%2C0%2C0%2C0%2C15.37%2C11%2C1.35%2C1.35%2C0%2C0%2C0%2C16%2C11.47Z%22%20style%3D%22fill%3A%23666662%22/%3E%3Crect%20width%3D%2228%22%20height%3D%2218%22%20style%3D%22fill%3Anone%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+	}
+
+	#global-header .mobile-drawer-menu #mt-indexing:before {
+		background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2229.94%22%20height%3D%2218%22%20viewBox%3D%220%200%2029.94%2018%22%3E%3Cg%20id%3D%22Layer_2%22%20data-name%3D%22Layer%202%22%3E%3Cg%20id%3D%22Art%22%3E%3Crect%20x%3D%223%22%20y%3D%224%22%20width%3D%2217.94%22%20height%3D%222%22%20style%3D%22fill%3A%23666662%22/%3E%3Crect%20x%3D%224%22%20y%3D%228%22%20width%3D%229.94%22%20height%3D%222%22%20style%3D%22fill%3A%23666662%22/%3E%3Crect%20x%3D%224%22%20y%3D%2211%22%20width%3D%228.94%22%20height%3D%221%22%20style%3D%22fill%3A%23666662%22/%3E%3Crect%20x%3D%224%22%20y%3D%2213%22%20width%3D%227.94%22%20height%3D%221%22%20style%3D%22fill%3A%23666662%22/%3E%3Cpath%20d%3D%22M15.29%2C11.21a.75.75%2C0%2C0%2C1%2C0-1.06L17%2C8.41a.75.75%2C0%2C0%2C1%2C1.06%2C0l1.32%2C1.32a.75.75%2C0%2C0%2C0%2C1.06%2C0l6.06-6.06a.75.75%2C0%2C0%2C1%2C1.06%2C0l1.74%2C1.74a.75.75%2C0%2C0%2C1%2C0%2C1.06l-8.86%2C8.86a.75.75%2C0%2C0%2C1-1.06%2C0Z%22%20style%3D%22fill%3A%23666662%22/%3E%3Cpath%20d%3D%22M1.94%2C17.9A1.9%2C1.9%2C0%2C0%2C1%2C0%2C16V2A1.9%2C1.9%2C0%2C0%2C1%2C1.94.1H21.88A1.9%2C1.9%2C0%2C0%2C1%2C23.78%2C2V4L22%2C5.76V2.9H1.84V16.1h20l.09.07%2C1.83-1.83V16a1.9%2C1.9%2C0%2C0%2C1-1.9%2C1.9Z%22%20style%3D%22fill%3A%23666662%22/%3E%3Crect%20width%3D%2229.94%22%20height%3D%2218%22%20style%3D%22fill%3Anone%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+	}
+
+	#global-header .mobile-drawer-menu #mt-temple:before {
+		background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%0A%09%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2215px%22%20height%3D%2220px%22%20viewBox%3D%220%200%2015%2020%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cpath%20fill%3D%22%23666662%22%20d%3D%22M7%2C14.4c-0.496%2C0-0.9-0.404-0.9-0.9V6c0-0.496%2C0.404-0.9%2C0.9-0.9h1c0.496%2C0%2C0.9%2C0.404%2C0.9%2C0.9v7.5%0A%09c0%2C0.496-0.404%2C0.9-0.9%2C0.9H7z%22/%3E%0A%3Cpath%20fill%3D%22%23666662%22%20d%3D%22M2%2C14.9c-0.496%2C0-0.9-0.404-0.9-0.9v-4c0-0.496%2C0.404-0.9%2C0.9-0.9h1c0.496%2C0%2C0.9%2C0.404%2C0.9%2C0.9v4%0A%09c0%2C0.496-0.404%2C0.9-0.9%2C0.9H2z%22/%3E%0A%3Cpath%20fill%3D%22%23666662%22%20d%3D%22M12%2C14.9c-0.496%2C0-0.9-0.404-0.9-0.9v-4c0-0.496%2C0.404-0.9%2C0.9-0.9h1c0.496%2C0%2C0.9%2C0.404%2C0.9%2C0.9v4%0A%09c0%2C0.496-0.404%2C0.9-0.9%2C0.9H12z%22/%3E%0A%3Cpath%20fill%3D%22%23666662%22%20d%3D%22M6%2C14.9c-0.496%2C0-0.9-0.404-0.9-0.9V9c0-0.496%2C0.404-0.9%2C0.9-0.9h3c0.496%2C0%2C0.9%2C0.404%2C0.9%2C0.9v5%0A%09c0%2C0.496-0.404%2C0.9-0.9%2C0.9H6z%22/%3E%0A%3Cpath%20fill%3D%22%23666662%22%20d%3D%22M3%2C10c0%2C0.55-0.225%2C1-0.5%2C1S2%2C10.55%2C2%2C10V7c0-0.55%2C0.225-1%2C0.5-1S3%2C6.45%2C3%2C7V10z%22/%3E%0A%3Cpath%20fill%3D%22%23666662%22%20d%3D%22M13%2C10c0%2C0.55-0.225%2C1-0.5%2C1S12%2C10.55%2C12%2C10V7c0-0.55%2C0.225-1%2C0.5-1S13%2C6.45%2C13%2C7V10z%22/%3E%0A%3Cpath%20fill%3D%22%23666662%22%20d%3D%22M8%2C6c0%2C0.55-0.225%2C1-0.5%2C1S7%2C6.55%2C7%2C6V1c0-0.55%2C0.225-1%2C0.5-1S8%2C0.451%2C8%2C1V6z%22/%3E%0A%3Crect%20fill%3D%22none%22%20width%3D%2215%22%20height%3D%2220%22/%3E%0A%3Cpath%20fill%3D%22%23666662%22%20d%3D%22M5.1%2C19.9v-6.371c0-0.801%2C0.854-1.429%2C1.901-1.429h1c1.042%2C0%2C1.894%2C0.625%2C1.899%2C1.393V19.9H5.1z%22/%3E%0A%3Cpath%20fill%3D%22%23666662%22%20d%3D%22M11.1%2C19.9v-6.371c0-0.801%2C0.853-1.429%2C1.9-1.429s1.9%2C0.852%2C1.9%2C1.9v5c0%2C0.496-0.404%2C0.9-0.9%2C0.9H11.1z%22/%3E%0A%3Cpath%20fill%3D%22%23666662%22%20d%3D%22M1%2C19.9c-0.496%2C0-0.9-0.404-0.9-0.9v-5c0-1.048%2C0.852-1.9%2C1.9-1.9s1.9%2C0.628%2C1.9%2C1.4v6.4H1z%22/%3E%0A%3C/svg%3E%0A");
+		height: 24px;
+		margin-bottom: 5px;
+	}
+
+	#global-header .mobile-drawer-menu .mobile-top-item.active #mt-frontier-tree:before {
+		background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%0A%09%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2227px%22%20height%3D%2221px%22%20viewBox%3D%220%200%2027%2021%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cg%3E%0A%09%3Cg%20id%3D%22XMLID_1_%22%3E%0A%09%09%3Cg%3E%0A%09%09%09%3Crect%20x%3D%221%22%20y%3D%227%22%20fill%3D%22%23333331%22%20width%3D%226%22%20height%3D%226%22/%3E%0A%09%09%09%3Cpath%20fill%3D%22%23333331%22%20d%3D%22M6.1%2C7.9v4.2H1.9V7.9H6.1%20M7%2C6.1H1C0.504%2C6.1%2C0.1%2C6.504%2C0.1%2C7v6c0%2C0.496%2C0.404%2C0.9%2C0.9%2C0.9h6%0A%09%09%09%09c0.496%2C0%2C0.9-0.404%2C0.9-0.9V7C7.9%2C6.504%2C7.496%2C6.1%2C7%2C6.1L7%2C6.1z%22/%3E%0A%09%09%3C/g%3E%0A%09%09%3Cg%3E%0A%09%09%09%3Crect%20x%3D%2219%22%20y%3D%221%22%20fill%3D%22%23333331%22%20width%3D%226%22%20height%3D%226%22/%3E%0A%09%09%09%3Cpath%20fill%3D%22%23333331%22%20d%3D%22M24.1%2C1.9v4.2H19.9V1.9H24.1%20M25%2C0.1h-6c-0.496%2C0-0.9%2C0.404-0.9%2C0.9v6c0%2C0.496%2C0.404%2C0.9%2C0.9%2C0.9h6%0A%09%09%09%09c0.496%2C0%2C0.9-0.404%2C0.9-0.9V1C25.9%2C0.504%2C25.496%2C0.1%2C25%2C0.1L25%2C0.1z%22/%3E%0A%09%09%3C/g%3E%0A%09%09%3Cg%3E%0A%09%09%09%3Crect%20x%3D%2219%22%20y%3D%2213%22%20fill%3D%22%23333331%22%20width%3D%226%22%20height%3D%226%22/%3E%0A%09%09%09%3Cpath%20fill%3D%22%23333331%22%20d%3D%22M24.1%2C13.9v4.2H19.9v-4.2H24.1%20M25%2C12.1h-6c-0.496%2C0-0.9%2C0.404-0.9%2C0.9v6c0%2C0.496%2C0.404%2C0.9%2C0.9%2C0.9h6%0A%09%09%09%09c0.496%2C0%2C0.9-0.404%2C0.9-0.9v-6C25.9%2C12.504%2C25.496%2C12.1%2C25%2C12.1L25%2C12.1z%22/%3E%0A%09%09%3C/g%3E%0A%09%09%3Cline%20fill%3D%22none%22%20stroke%3D%22%23333331%22%20stroke-width%3D%222%22%20stroke-miterlimit%3D%2210%22%20x1%3D%228%22%20y1%3D%2210%22%20x2%3D%2213%22%20y2%3D%2210%22/%3E%0A%09%09%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23333331%22%20stroke-width%3D%222%22%20stroke-miterlimit%3D%2210%22%20d%3D%22M18%2C16h-4.75C13.113%2C16%2C13%2C15.887%2C13%2C15.75V4.25%0A%09%09%09C13%2C4.113%2C13.113%2C4%2C13.25%2C4H18%22/%3E%0A%09%09%3Crect%20fill%3D%22none%22%20width%3D%2227%22%20height%3D%2221%22/%3E%0A%09%3C/g%3E%0A%3C/g%3E%0A%3C/svg%3E%0A");
+	}
+
+	#global-header .mobile-drawer-menu .mobile-top-item.active #mt-search:before {
+		background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2231%22%20height%3D%2221%22%20viewBox%3D%220%200%2031%2021%22%3E%3Cg%20id%3D%22Layer_2%22%20data-name%3D%22Layer%202%22%3E%3Cg%20id%3D%22Art%22%3E%3Cpath%20d%3D%22M29.55%2C14.91a1.36%2C1.36%2C0%2C0%2C1-1-.4L25.09%2C11A1.36%2C1.36%2C0%2C0%2C1%2C27%2C9.09l3.5%2C3.5a1.36%2C1.36%2C0%2C0%2C1-1%2C2.32Z%22%20style%3D%22fill%3A%23333331%22/%3E%3Cpath%20d%3D%22M22%2C12a6%2C6%2C0%2C1%2C1%2C6-6A6%2C6%2C0%2C0%2C1%2C22%2C12Zm0-9.75A3.75%2C3.75%2C0%2C1%2C0%2C25.75%2C6%2C3.75%2C3.75%2C0%2C0%2C0%2C22%2C2.25Z%22%20style%3D%22fill%3A%23333331%22/%3E%3Cpath%20d%3D%22M1.63%2C20.9A1.63%2C1.63%2C0%2C0%2C1%2C.09%2C19.3v-.84c0-.34.25-.48.56-.66l.2-.12c.4-.23%2C1.69-.83%2C1.7-.84l.54%2C0V6.54A2.4%2C2.4%2C0%2C0%2C1%2C5.44%2C4.1h8.69l-.06.22a4%2C4%2C0%2C0%2C0-.19%2C1.3c0%2C.09%2C0%2C.17%2C0%2C.25v.06h-9V17.1h16.2v-3.5h1.85v3.21l0%2C0s1.26.6%2C1.66.84l.2.12c.31.17.56.31.56.65v.84a1.63%2C1.63%2C0%2C0%2C1-1.53%2C1.6Zm8.29-2A1%2C1%2C0%2C0%2C0%2C11%2C20h4.1a1%2C1%2C0%2C0%2C0%2C1-1.08v-.08H9.92Z%22%20style%3D%22fill%3A%23333331%22/%3E%3Crect%20width%3D%2231%22%20height%3D%2221%22%20style%3D%22fill%3Anone%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+	}
+
+	#global-header .mobile-drawer-menu .mobile-top-item.active #mt-memories:before {
+		background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2228%22%20height%3D%2218%22%20viewBox%3D%220%200%2028%2018%22%3E%3Cg%20id%3D%22Layer_2%22%20data-name%3D%22Layer%202%22%3E%3Cg%20id%3D%22Art%22%3E%3Cpath%20d%3D%22M2.8%2C17.88a.65.65%2C0%2C0%2C1-.48-.21.71.71%2C0%2C0%2C1-.2-.5v-.29H2a1.38%2C1.38%2C0%2C0%2C1%2C0-2.75h.13V11.88H2A1.31%2C1.31%2C0%2C0%2C1%2C.78%2C10.5%2C1.31%2C1.31%2C0%2C0%2C1%2C2%2C9.13h.13V6.88H2A1.31%2C1.31%2C0%2C0%2C1%2C.78%2C5.5%2C1.31%2C1.31%2C0%2C0%2C1%2C2%2C4.13h.13V4C2.13%2C2.17%2C4.21.13%2C7%2C.13H27.22a.62.62%2C0%2C0%2C1%2C.47.21.7.7%2C0%2C0%2C1%2C.19.5V16.14a.76.76%2C0%2C0%2C1-.2.52.59.59%2C0%2C0%2C1-.46.22H25.13l0-13.93c0-.71-.31-1.07-.92-1.07H7A2.21%2C2.21%2C0%2C0%2C0%2C4.63%2C4v.13H22.25a.57.57%2C0%2C0%2C1%2C.45.19.74.74%2C0%2C0%2C1%2C.18.5V17.17a.76.76%2C0%2C0%2C1-.18.5.57.57%2C0%2C0%2C1-.45.2ZM16%2C11.47a2.72%2C2.72%2C0%2C0%2C1-1.87%2C1.16l-.1%2C0v.18l.07%2C0%2C1.75.81a1.06%2C1.06%2C0%2C0%2C1%2C.56.66s.22.82.23.89-.62.52-2%2C.61v.25h2.09a1.38%2C1.38%2C0%2C0%2C0%2C1.38-1.37V7.25a1.38%2C1.38%2C0%2C0%2C0-1.37-1.37H9.25A1.38%2C1.38%2C0%2C0%2C0%2C7.88%2C7.25v7.48A1.38%2C1.38%2C0%2C0%2C0%2C9.25%2C16.1h3.69v-.25c-2.59%2C0-3.67-.41-3.67-.63%2C0-.06.23-.86.23-.86a1.06%2C1.06%2C0%2C0%2C1%2C.56-.67l1.75-.81.07%2C0v-.18l-.1%2C0a2.73%2C2.73%2C0%2C0%2C1-1.87-1.16%2C1.35%2C1.35%2C0%2C0%2C0%2C.66-.48%2C2%2C2%2C0%2C0%2C0%2C.25-1.56%2C1.42%2C1.42%2C0%2C0%2C1%2C0-.35A1.49%2C1.49%2C0%2C0%2C1%2C11.25%2C8%2C2.37%2C2.37%2C0%2C0%2C1%2C13%2C7.37%2C2.37%2C2.37%2C0%2C0%2C1%2C14.69%2C8a1.47%2C1.47%2C0%2C0%2C1%2C.43%2C1.07%2C1.49%2C1.49%2C0%2C0%2C1%2C0%2C.37A2%2C2%2C0%2C0%2C0%2C15.37%2C11%2C1.35%2C1.35%2C0%2C0%2C0%2C16%2C11.47Z%22%20style%3D%22fill%3A%23333331%22/%3E%3Crect%20width%3D%2228%22%20height%3D%2218%22%20style%3D%22fill%3Anone%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+	}
+
+	#global-header .mobile-drawer-menu .mobile-top-item.active #mt-indexing:before {
+		background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2229.94%22%20height%3D%2218%22%20viewBox%3D%220%200%2029.94%2018%22%3E%3Cg%20id%3D%22Layer_2%22%20data-name%3D%22Layer%202%22%3E%3Cg%20id%3D%22Art%22%3E%3Crect%20x%3D%223%22%20y%3D%224%22%20width%3D%2217.94%22%20height%3D%222%22%20style%3D%22fill%3A%23333331%22/%3E%3Crect%20x%3D%224%22%20y%3D%228%22%20width%3D%229.94%22%20height%3D%222%22%20style%3D%22fill%3A%23333331%22/%3E%3Crect%20x%3D%224%22%20y%3D%2211%22%20width%3D%228.94%22%20height%3D%221%22%20style%3D%22fill%3A%23333331%22/%3E%3Crect%20x%3D%224%22%20y%3D%2213%22%20width%3D%227.94%22%20height%3D%221%22%20style%3D%22fill%3A%23333331%22/%3E%3Cpath%20d%3D%22M15.29%2C11.21a.75.75%2C0%2C0%2C1%2C0-1.06L17%2C8.41a.75.75%2C0%2C0%2C1%2C1.06%2C0l1.32%2C1.32a.75.75%2C0%2C0%2C0%2C1.06%2C0l6.06-6.06a.75.75%2C0%2C0%2C1%2C1.06%2C0l1.74%2C1.74a.75.75%2C0%2C0%2C1%2C0%2C1.06l-8.86%2C8.86a.75.75%2C0%2C0%2C1-1.06%2C0Z%22%20style%3D%22fill%3A%23333331%22/%3E%3Cpath%20d%3D%22M1.94%2C17.9A1.9%2C1.9%2C0%2C0%2C1%2C0%2C16V2A1.9%2C1.9%2C0%2C0%2C1%2C1.94.1H21.88A1.9%2C1.9%2C0%2C0%2C1%2C23.78%2C2V4L22%2C5.76V2.9H1.84V16.1h20l.09.07%2C1.83-1.83V16a1.9%2C1.9%2C0%2C0%2C1-1.9%2C1.9Z%22%20style%3D%22fill%3A%23333331%22/%3E%3Crect%20width%3D%2229.94%22%20height%3D%2218%22%20style%3D%22fill%3Anone%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+	}
+
+	#global-header .mobile-drawer-menu .mobile-top-item.active #mt-temple:before {
+		background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%0A%09%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2215px%22%20height%3D%2220px%22%20viewBox%3D%220%200%2015%2020%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cpath%20fill%3D%22%23333331%22%20d%3D%22M7%2C14.4c-0.496%2C0-0.9-0.404-0.9-0.9V6c0-0.496%2C0.404-0.9%2C0.9-0.9h1c0.496%2C0%2C0.9%2C0.404%2C0.9%2C0.9v7.5%0A%09c0%2C0.496-0.404%2C0.9-0.9%2C0.9H7z%22/%3E%0A%3Cpath%20fill%3D%22%23333331%22%20d%3D%22M2%2C14.9c-0.496%2C0-0.9-0.404-0.9-0.9v-4c0-0.496%2C0.404-0.9%2C0.9-0.9h1c0.496%2C0%2C0.9%2C0.404%2C0.9%2C0.9v4%0A%09c0%2C0.496-0.404%2C0.9-0.9%2C0.9H2z%22/%3E%0A%3Cpath%20fill%3D%22%23333331%22%20d%3D%22M12%2C14.9c-0.496%2C0-0.9-0.404-0.9-0.9v-4c0-0.496%2C0.404-0.9%2C0.9-0.9h1c0.496%2C0%2C0.9%2C0.404%2C0.9%2C0.9v4%0A%09c0%2C0.496-0.404%2C0.9-0.9%2C0.9H12z%22/%3E%0A%3Cpath%20fill%3D%22%23333331%22%20d%3D%22M6%2C14.9c-0.496%2C0-0.9-0.404-0.9-0.9V9c0-0.496%2C0.404-0.9%2C0.9-0.9h3c0.496%2C0%2C0.9%2C0.404%2C0.9%2C0.9v5%0A%09c0%2C0.496-0.404%2C0.9-0.9%2C0.9H6z%22/%3E%0A%3Cpath%20fill%3D%22%23333331%22%20d%3D%22M3%2C10c0%2C0.55-0.225%2C1-0.5%2C1S2%2C10.55%2C2%2C10V7c0-0.55%2C0.225-1%2C0.5-1S3%2C6.45%2C3%2C7V10z%22/%3E%0A%3Cpath%20fill%3D%22%23333331%22%20d%3D%22M13%2C10c0%2C0.55-0.225%2C1-0.5%2C1S12%2C10.55%2C12%2C10V7c0-0.55%2C0.225-1%2C0.5-1S13%2C6.45%2C13%2C7V10z%22/%3E%0A%3Cpath%20fill%3D%22%23333331%22%20d%3D%22M8%2C6c0%2C0.55-0.225%2C1-0.5%2C1S7%2C6.55%2C7%2C6V1c0-0.55%2C0.225-1%2C0.5-1S8%2C0.451%2C8%2C1V6z%22/%3E%0A%3Crect%20fill%3D%22none%22%20width%3D%2215%22%20height%3D%2220%22/%3E%0A%3Cpath%20fill%3D%22%23333331%22%20d%3D%22M5.1%2C19.9v-6.371c0-0.801%2C0.854-1.429%2C1.901-1.429h1c1.042%2C0%2C1.894%2C0.625%2C1.899%2C1.393V19.9H5.1z%22/%3E%0A%3Cpath%20fill%3D%22%23333331%22%20d%3D%22M11.1%2C19.9v-6.371c0-0.801%2C0.853-1.429%2C1.9-1.429s1.9%2C0.852%2C1.9%2C1.9v5c0%2C0.496-0.404%2C0.9-0.9%2C0.9H11.1z%22/%3E%0A%3Cpath%20fill%3D%22%23333331%22%20d%3D%22M1%2C19.9c-0.496%2C0-0.9-0.404-0.9-0.9v-5c0-1.048%2C0.852-1.9%2C1.9-1.9s1.9%2C0.628%2C1.9%2C1.4v6.4H1z%22/%3E%0A%3C/svg%3E%0A");
+	}
+
+	#global-header .mobile-drawer-menu .mobile-top-item .hamburger-icon:before {
+		background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%0A%09%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2219px%22%20height%3D%2217px%22%20viewBox%3D%220%200%2019%2017%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cpath%20fill%3D%22%23666662%22%20d%3D%22M19%2C2c0%2C1.1-0.9%2C2-2%2C2H2C0.9%2C4%2C0%2C3.1%2C0%2C2l0%2C0c0-1.1%2C0.9-2%2C2-2h15C18.1%2C0%2C19%2C0.9%2C19%2C2L19%2C2z%22/%3E%0A%3Cpath%20fill%3D%22%23666662%22%20d%3D%22M19%2C8.481c0%2C1.1-0.9%2C2-2%2C2H2c-1.1%2C0-2-0.9-2-2l0%2C0c0-1.1%2C0.9-2%2C2-2h15C18.1%2C6.481%2C19%2C7.381%2C19%2C8.481%0A%09L19%2C8.481z%22/%3E%0A%3Cpath%20fill%3D%22%23666662%22%20d%3D%22M19%2C14.962c0%2C1.1-0.9%2C2-2%2C2H2c-1.1%2C0-2-0.9-2-2l0%2C0c0-1.1%2C0.9-2%2C2-2h15C18.1%2C12.962%2C19%2C13.862%2C19%2C14.962%0A%09L19%2C14.962z%22/%3E%0A%3C/svg%3E%0A");
+		height: 19px;
+		width: 19px;
+	}
+
+	#global-header .mobile-drawer-menu .mobile-top-item .hamburger-icon:before {
+		margin-bottom: 6px;
+	}
+
+	#global-header.logged-in .logo-container {
+		display: none;
+	}
+
+	#global-header.logged-out .mobile-drawer-menu .mobile-top-item {
+		vertical-align: top;
+	}
+
+	#global-header.logged-out .mobile-drawer-menu .mobile-top-item .hamburger-icon {
+		top: 8px;
+	}
+
+	#global-header.logged-out .mobile-drawer-menu .logo-mobile.mobile-top-link {
+		display: none;
+	}
+
+	#global-header .hamburger-label {
+		vertical-align: middle;
+	}
+
+	#global-header .mobile-drawer-button {
+		color: #333331;
+	}
+
+	#global-header .mobile-drawer-button:hover {
+		text-decoration: none;
+	}
+
+	#global-header .auxilary-links {
+		display: none;
+	}
+
+	.locale-zh #global-header .hamburger-icon:before {
+		margin-bottom: 9px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	body:before {
+		content:"mobile";
+	}
+
+	#global-header .primary-nav-wrapper {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	#global-header .mobile-drawer-menu #mobile-top-nav {
+		height: 59px;
+		width: calc(100% - 54px);
+		box-sizing: border-box;
+		padding: 5px 4.5% 0 5px;
+	}
+
+	#global-header .mobile-drawer-menu .mobile-top-item .mobile-top-link {
+		padding: 2px 8px;
+	}
+
+	#global-header .mobile-drawer-menu .mobile-top-item .mobile-top-link.logo-mobile {
+		height: 49px;
+	}
+
+	#global-header .mobile-drawer-menu .mobile-top-item .mobile-top-link.hamburger-icon {
+		top: 7px;
+	}
+
+	#global-header .hamburger-label {
+		font-size: 14px;
+	}
+
+	#global-header .auxilary-links {
+		padding-left: 12px;
+		padding-bottom: 10px;
+	}
+
+	#global-header .mobile-drawer-menu .mobile-top-item .mobile-top-link.hamburger-icon {
+		top: 10px;
+		right: 5px;
+	}
+
+	#global-header.logged-out .logo {
+		width: 153px;
+		height: 41px;
+		background-size: contain;
+	}
+
+	#global-header.logged-out .mobile-drawer-menu #mobile-top-nav .hamburger-icon {
+		top: 7px;
+	}
+}
+
+@media (max-width: 480px) {
+	#global-header.logged-in .mobile-drawer-menu .mobile-top-item .hamburger-icon {
+		top:11px;
+	}
+}
+
+@media (max-width: 450px) {
+	#global-header.logged-in .mobile-drawer-menu #mobile-top-nav {
+		padding:5px 2.3% 0 5px;
+	}
+}
+
+.simpleModal,#langPickerModal.simpleModal {
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 150ms ease-in;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 9999;
+	height: 100vh;
+	display: block;
+}
+
+.simpleModal .backdrop,#langPickerModal.simpleModal .backdrop {
+	background: rgba(0,0,0,0);
+	cursor: default;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0 !important;
+}
+
+.simpleModal .backdrop.dark,#langPickerModal.simpleModal .backdrop.dark {
+	background: rgba(0,0,0,0.7);
+}
+
+.simpleModal .backdrop.light,#langPickerModal.simpleModal .backdrop.light {
+	background: rgba(255,255,255,0.8);
+}
+
+.simpleModal .backdrop.shadow+section,#langPickerModal.simpleModal .backdrop.shadow+section {
+	box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+}
+
+.simpleModal section,#langPickerModal.simpleModal section {
+	max-width: 600px;
+	min-width: 200px;
+	position: relative;
+	margin: auto;
+	padding: 40px;
+	border-radius: 5px;
+	background: #fff;
+	max-height: 100%;
+	overflow-y: auto;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.simpleModal:target,#langPickerModal.simpleModal:target {
+	visibility: visible;
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.simpleModal .closeModal,#langPickerModal.simpleModal .closeModal {
+	color: #ccc;
+	position: absolute;
+	right: 12px;
+	top: 5px;
+	font-family: sans-serif;
+	-webkit-transform: scale(1,0.75);
+	transform: scale(1,0.75);
+	text-decoration: none;
+	font-size: 25px;
+	cursor: pointer;
+}
+
+.simpleModal .closeModal:hover,#langPickerModal.simpleModal .closeModal:hover {
+	color: #000;
+}
+
+@media (max-width: 767px) {
+	.simpleModal section {
+		margin:1%;
+		max-width: initial;
+	}
+}
+
+.simpleCSS-trigger {
+	position: initial;
+	/* typically absolute for a popover box */
+}
+
+.simpleCSS-trigger:focus {
+	pointer-events: none;
+}
+
+.simpleCSS-trigger:focus + .simpleCSSElm {
+	display: block;
+}
+
+.simpleCSS-trigger +.simpleCSSElm {
+	position: initial;
+	display: none;
+}
+
+.simpleCSS-trigger +.simpleCSSElm:hover {
+	display: block;
+}
+
+.simpleCSS-trigger +.simpleCSSElm a {
+	pointer-events: auto;
+	display: block;
+}
+
+.flex-column {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+}
+
+.logo-nav {
+	max-width: 460px;
+	position: relative;
+	margin: auto 16px 16px auto;
+}
+
+.logo-nav .hidden {
+	display: none;
+}
+
+.logo-nav .shadow {
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
+}
+
+.logo-nav .outer-logo-nav-close {
+	background: none;
+	border: none;
+	cursor: pointer;
+	-webkit-align-self: flex-end;
+	align-self: flex-end;
+	margin-right: 30px;
+	margin-top: 10px;
+}
+
+.logo-nav .info-section {
+	padding: 22px;
+	margin: 12px;
+	border-radius: 7px;
+	background: #fff;
+	overflow-y: auto;
+	text-align: center;
+}
+
+.logo-nav .info-section.hoverable {
+	transition: background 0.2s ease-in-out;
+}
+
+.logo-nav .info-section.hoverable:hover {
+	background: #ecebea;
+}
+
+.logo-nav .info-section.clickable {
+	cursor: pointer;
+}
+
+.logo-nav .info-section.more-info {
+	min-height: 410px;
+}
+
+.logo-nav .info-section #infoHeading {
+	font-size: 19px;
+	font-weight: 600;
+	line-height: 32px;
+	margin: 0 24px;
+}
+
+.logo-nav .info-section #infoLearnMore {
+	margin: 22px 0;
+}
+
+.logo-nav .info-section span.right-chevron {
+	font-size: 17px;
+}
+
+.logo-nav .fab {
+	margin: 16px;
+	display: block;
+	width: 56px;
+	height: 56px;
+	background-color: #fff;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	font-size: 20px;
+	-webkit-align-self: flex-end;
+	align-self: flex-end;
+}
+
+.logo-nav .fab svg,.logo-nav .fab img {
+	margin-top: 4px;
+}
+
+@media (max-width: 990px) {
+	.logo-nav {
+		max-width:400px;
+		margin: auto auto 16px auto;
+	}
+
+	.logo-nav .info-section .info-heading {
+		margin: 0;
+	}
+
+	.logo-nav .info-section #infoHeading {
+		margin: 0;
+	}
+
+	.logo-nav .fab {
+		-webkit-align-self: center;
+		align-self: center;
+	}
+}
+
+@media (max-height: 620px) {
+	.logo-nav .info-section.more-info {
+		min-height:385px;
+		height: 385px;
+	}
+}
+
+
+/*# sourceMappingURL=hf2019-critical.css.map */
+/**** up to line 2084 **/
+
+#mobileDrawerContainer {
+    display: none;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(51,51,49,0.8);
+}
+
+#mobileDrawerContainer.open {
+    display: block;
+}
+
+#mobileDrawerContainer #mobileDrawer {
+    position: absolute;
+    right: 0;
+    min-width: 260px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -4px 2px 4px rgba(0,0,0,0.25);
+    padding-top: 20px;
+}
+
+#mobileDrawerContainer #closeDrawer {
+    float: right;
+    padding: 5px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+}
+
+#mobileDrawerContainer #loAccount,#mobileDrawerContainer #liAccount {
+    clear: both;
+}
+
+#mobileDrawerContainer #loAccount {
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+#mobileDrawerContainer #liAccount {
+    padding: 16px;
+}
+
+#mobileDrawerContainer .displayName {
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.001em;
+}
+
+#mobileDrawerContainer .user-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 2rem;
+}
+
+#mobileDrawerContainer .menuRow:hover {
+    background-color: #efefec;
+}
+
+#mobileDrawerContainer .menuRow a {
+    color: #000;
+    display: block;
+    padding: 8px 16px;
+}
+
+#mobileDrawerContainer .menuRow a:hover {
+    text-decoration: none;
+}
+
+#mobileDrawerContainer .menuTrigger {
+    cursor: pointer;
+    padding: 8px 16px;
+}
+
+#mobileDrawerContainer .menuTrigger:after {
+    content: '';
+    width: 24px;
+    height: 24px;
+    background: url("https://edge.fscdn.org/assets/components/hf/assets/img/icons/arrow-c21bc45b2e74b8aaca025ec0f2490958.svg");
+    display: inline-block;
+    float: right;
+    margin-left: 8px;
+    transition: transform 0.4s;
+}
+
+#mobileDrawerContainer .menuTrigger.active:after {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+#mobileDrawerContainer .submenu {
+    list-style-type: none;
+    background-color: #f8f8f5;
+    margin: 0;
+    max-height: 0;
+    transition: max-height 0.4s;
+    overflow: hidden;
+}
+
+#mobileDrawerContainer .submenu.active {
+    max-height: 1000px;
+    transition: max-height 0.8s;
+}
+
+/*# sourceMappingURL=hf2019-async-495c3804d5b74d47a7df6608258dbfd1.css.map */
+
+
+/**** lines 2088 - 2179 **/
+#global-header {
+	margin-bottom: 0px;
+	box-shadow: none;
+}
+
+.vpDiv {
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+
+.valueProposition {
+	padding: 10px;
+	position: absolute;
+}
+
+.centerWrapper {
+	max-width: 1170px;
+	margin: auto;
+	height: 100%;
+	position: relative;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
+}
+
+.largeP {
+	font-size: 18px;
+}
+
+.linkCTA {
+	font-size: 18px;
+}
+
+.fs-button--minor.linkCTA.whiteCTA {
+	color: #fff;
+}
+
+.linkCTA.whiteCTA:after {
+	background-image: url("https://edge.fscdn.org/assets/img/nlihp/triangleWhite-e664e62bfb5bbcc4efb42e0495795bbd.svg");
+}
+
+.linkCTA:after {
+	background-image: url("https://edge.fscdn.org/assets/img/nlihp/triangleBlue-bb0bb912a544b5c7e119b59dcd9a1d57.svg");
+	content: "";
+	width: 6px;
+	height: 12px;
+	margin-left: 6px;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.linkCTA.signInLink:after {
+	background-image: url("https://edge.fscdn.org/assets/img/nlihp/triangleBlue-bb0bb912a544b5c7e119b59dcd9a1d57.svg");
+	content: "";
+	width: 6px;
+	height: 8px;
+	margin-left: 3px;
+}
+
+.load-spinner {
+	height: 40px;
+	width: 40px;
+	position: absolute;
+	top: 45%;
+	left: 45%;
+	transform: translate(-50%);
+}
+
+.spinner-container {
+	height: 66%;
+	position: relative;
+	top: 17%;
+}
+
+.tempLazyImageClass {
+	z-index: -1;
+}
+
+.fs-button.signUpCTA {
+	font-size: 16px;
+}
+
+.signInLink {
+	font-size: 14px;
+}
+
+/*# sourceMappingURL=nlihp.css.map */
+
+
+/*
+ * =========================================================================
+ * |                                                                       |
+ * | FsHeader files below here                                             |
+ * | (Tweaks)                                                          |
+ * |                                                                       |
+ * =========================================================================
+ */
+ 
+ /**** Push footer away from sidebar **/
+#global-footer {
+	margin-left: 150px;
+}
+
+ /**** Remove Header Language Picker **/
+.langPicker {
+	display: none !important;
+}
