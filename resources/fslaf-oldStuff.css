@@ -1,0 +1,454 @@
+/*----------------------------old stuff----------------------------------*/
+/* GoogleTranslator CSS */
+/* Pad Google Translate box in portlet in sidebar */
+#p-googleatranslator .pBody {
+    padding-top: 5px;
+    text-align:  center;
+}
+/* Removes the translation "better suggestion" pop-up */
+#goog-gt-tt {
+        display:none !important;
+}
+/* Removes the translation "better suggestion" highlight */
+font.goog-text-highlight {
+background-color: unset;
+-webkit-box-shadow: none;
+box-shadow: none;
+}
+/* Move the Traslate box */
+#google_translate_element {
+        transform: translateX(-10px);
+}
+/* Zoom for the entire element */
+.goog-te-gadget-simple {
+        zoom: 0.85 !important;
+        -moz-transform: scale(0.85) !important;
+        padding-right: 15px;
+}
+/* Remove drowndown arrow */
+.goog-te-menu-value span:last-child {
+        display:none !important;
+}
+
+/* Changes to header formatting levels */
+#content h2 {
+    font-weight: bold;
+}
+#content h4 {
+    font-family: Museo,Helvetica,Verdana,serif!important;
+}
+h1#firstHeading.firstHeading {
+    font-family: Museo !important;
+}
+
+/* CodeMirror background color tweak */
+.CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection {
+    background-color: #444 !important;
+}
+
+/*green online button*/
+.green_online_button {
+    background-color: #BFD730;
+    border-radius: 10px;
+    color: white;
+    width: 210px;
+    min-height:52px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin: 5px;
+    padding-right: 5px;
+    padding-left:5px;
+    padding-top:15px;
+    padding-bottom:15px;
+    display: block;
+}
+
+.green_online_button:hover, .green_online_button:visited {
+    text-decoration: none !important;
+    background-color: #cade54;
+}
+
+.green_online_button>a, .green_online_button>a.visited, .green_online_button>a.external:visited, .green_online_button>a:hover {
+    color: white !important;
+    text-decoration: none !important;
+}
+/*red online button*/
+.red_online_button {
+    background-color: #f16458;
+    border-radius: 10px;
+    color: white;
+    width: 210px;
+    min-height:52px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin: 5px;
+    padding-right: 5px;
+    padding-left:5px;
+    padding-top:15px;
+    padding-bottom:15px;
+    display: block;
+}
+
+.red_online_button:hover, .red_online_button:visited {
+    text-decoration: none !important;
+    background-color: #f59289;
+}
+
+.red_online_button>a, .red_online_button>a.visited, .red_online_button>a.external:visited, .red_online_button>a:hover {
+    color: white !important;
+    text-decoration: none !important;
+}
+/*brown online button*/
+.brown_online_button {
+    background-color: #9c947a;
+    border-radius: 10px;
+    color: white;
+    width: 210px;
+    min-height:52px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin: 5px;
+    padding-right: 5px;
+    padding-left:5px;
+    padding-top:15px;
+    padding-bottom:15px;
+    display: block;
+}
+
+.brown_online_button:hover, .brown_online_button:visited {
+    text-decoration: none !important;
+    background-color: #b3ad98;
+}
+
+.brown_online_button>a, .brown_online_button>a.visited, .brown_online_button>a.external:visited, .brown_online_button>a:hover {
+    color: white !important;
+    text-decoration: none !important;
+}
+/*orange online button*/
+.orange_online_button {
+    background-color: #fcb34b;
+    border-radius: 10px;
+    color: white;
+    width: 210px;
+    min-height:52px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin: 5px;
+    padding-right: 5px;
+    padding-left:5px;
+    padding-top:15px;
+    padding-bottom:15px;
+    display: block;
+}
+
+.orange_online_button:hover, .orange_online_button:visited {
+    text-decoration: none !important;
+    background-color: #fdbf68;
+}
+
+.orange_online_button>a, .orange_online_button>a.visited, .orange_online_button>a.external:visited, .orange_online_button>a:hover {
+    color: white !important;
+    text-decoration: none !important;
+}
+/*gray online button*/
+.gray_online_button {
+    background-color: #bab7b1;
+    border-radius: 10px;
+    color: white;
+    width: 210px;
+    min-height:52px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin: 5px;
+    padding-right: 5px;
+    padding-left:5px;
+    padding-top:15px;
+    padding-bottom:15px;
+    display: block;
+    
+}
+
+.gray_online_button:hover, .gray_online_button:visited {
+    text-decoration: none !important;
+    background-color:  #cfcdc9;
+}
+
+.gray_online_button>a, .gray_online_button>a.visited, .gray_online_button>a.external:visited, .gray_online_button>a:hover {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+
+
+
+
+/* Override Bootstrap for tooltip links */
+.tooltip {
+	font-size: 1rem !important;
+	font-family: Verdana,sans-serif !important;
+}
+
+/* Remove SMW Loader */
+/* Should be removed after SMW is fixed */
+#mw-indicator-smw-entity-examiner {
+	display: none !important;
+}
+
+/* Remove powered by banners in footer */
+#footer-poweredbyico {
+	display: none !important;
+}
+
+/* The background container for Main_Page-GR */
+#GRContainer {
+	background-image: url(/wiki/en/img_auth.php/9/95/World_map_purplish.png); 
+	/* Make the container (and background image) 100% of the viewport */
+	width: 100vw;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position-x: center;
+}
+#GRContainerTest2 {
+	background-image: url(/wiki/en/img_auth.php/9/95/World_map_purplish.png);
+}
+/* the menu table on the Main_Page-GR */
+#GRMenu {
+	border:1px solid black; 
+	width:max-content;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #ffffffd1; /* white with alpha transparency */
+}
+/* The callout for Main_Page-GR */
+.callout2 {
+    position: absolute;
+    top: 1%;
+    right: 80%;
+    width: 160px;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 5px 5px 2px #888888;
+    color: #004d99;
+    background-color: white;
+    padding: 5px;
+    border: 1px solid gray
+}
+/* The div containing the logo on Main Page-GR */
+.GRLogo {
+	position: absolute;
+    left: 80%;
+    top: 1%;
+}
+
+
+
+/* Create a class for GR Sidebar tables */
+.sidebar {
+	padding:2px; 
+	width:max-content; 
+	margin-left:10px;
+	margin-top: 47px;
+	border-spacing:0px; 
+	border:1px solid gray; 
+	position:relative; 
+	background:white;
+}
+
+.sidebar p {
+	line-height: 1em;
+}
+
+.sidebar-heading {
+	text-align:center; 
+	background: #DCDAD1; 
+	font-size:12pt;
+}
+/** overrides for Mobile Guided Research Main Page */
+@media (max-width: 720px) {
+	/** override Minerva for menu table */
+	.content table {
+		width: fit-content !important;
+		border: solid 1px gray !important;
+		padding-top: unset !important;
+	}
+	/* Minerva 
+	@media (max-width: 720px)
+	.content table {
+		width: 100% !important;
+		border: unset !important;
+		padding-top: 2.5rem;
+	*/
+
+	/* Send nav back button to below menu */
+	.callout2 {
+		position: unset;
+		/* position: absolute; */
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	/* Hide the callout heading */
+	.calloutHeading {
+		display: none;
+	}
+	
+	.guided_research_link {
+		width: auto;
+		/* width: 90px; */
+	}
+
+	
+	.GRLogo {
+		position: unset;
+	}
+}
+/* end media query */
+
+/* Create a blue gradient */
+.gradient {
+	padding-left:20px; 
+	padding-right:20px; 
+	margin-left:-20px; 
+	margin-right:-20px; 
+	background: #d7e0ff;
+}
+
+/* The following readjusts the popup box that appears when hovering over links in GuidedResearch.   */
+.tooltip .tooltiptext {
+    left: unset;
+    width: max-content;
+}
+
+/* Override Bootstrap's definition of container for the FAQ Pages */
+#FAQPage.container {
+	margin-left: 0;
+}
+
+/* Bootstrap overrides */
+legend {
+	width: auto;
+}
+.tooltip {
+	opacity:100 !important;
+}
+table {
+	border-collapse: separate;
+}
+caption {
+	caption-side: top;
+}
+th {
+	text-align: center;
+}
+/* end Bootstrap overrides */
+
+
+.button-style {
+  background-color: #7897BA;
+  border:4px outset #B3D2F5;
+  border-radius:.5rem;
+  color: white !important;
+  padding: .2rem 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-weight:bold;
+  font-family:Arial;
+  position:absolute;
+  font-size: 1.25rem;
+  cursor: pointer;
+	}
+.button-style > a, .button-style > a.visited, .button-style > a.external:visited , .button-style > a:hover {
+  color:white !important;
+	text-decoration:none !important;
+}
+
+
+/* Set width of search box to 70%, so 'go' button stays inline. */
+#bodySearchInputHomePageSearchBox {
+    width: 70%;
+}
+
+/* change the box around the code feature */
+code {
+    color: #000;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+pre, code, tt, kbd, samp, .mw-code {
+    font-family: monospace,Courier;
+}
+
+/* make sure missing pages remain colored correctly after visiting */
+a.new:visited, #p-personal a.new:visited {
+    color: #a55858 !important;
+}
+
+/* change border on input forms to be 1pm, instead of 2px, and grey instead of black */
+form input {
+/*    border: 1px solid !important;*/
+    border-color: darkgrey !important;
+}
+
+#newHeading {
+margin-top:0;}
+
+/* Define spacing and # of columns based on screen size */
+@media screen and (min-width: 1400px) {
+ .column-spacing-fullscreen{
+   column-count: 6;
+	padding-right: 9% !important;
+}}	
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+ .column-spacing-fullscreen{
+   column-count: 5;
+}}
+@media screen and (min-width: 900px) and (max-width:1199px) {
+ .column-spacing-fullscreen{
+   column-count: 4;
+}}
+@media screen and (min-width: 600px) and (max-width:899px) {
+ .column-spacing-fullscreen{
+   column-count: 3;
+ }}
+@media screen and (max-width:745px) {
+ .column-spacing-fullscreen{
+   column-count: 2;
+}}
+@media screen and (max-width:500px) {
+ .column-spacing-fullscreen{
+   column-count: 1;
+}}
+
+/* Define spacing and # of columns based on screen size - however, 
+/* this section assumes that only half the screen is available for 
+/* the columns.  Even though the screen size may be 1400px, the 
+/* available space for the columns is half that, or 700px. */
+
+@media screen and (min-width: 1400px) {
+ .column-spacing-halfscreen{
+   column-count: 3;
+}}	
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+ .column-spacing-halfscreen{
+   column-count: 2;
+}}
+@media screen and (min-width: 900px) and (max-width:1199px) {
+ .column-spacing-halfscreen{
+   column-count: 1;
+}}
+.column-spacing-halfscreen li, .column-spacing-fullscreen li {padding-right:5px;}
+
+
+/* landing page */
+.fakelink {
+    color:#004d99;
+    display:block;
+}
