@@ -1,0 +1,48 @@
+{
+	"name": "FsLookAndFeel",
+	"version": "0.1",
+	"author": [
+		"Yaron Koren"
+	],
+	"license-name": "GPL-2.0-or-later",
+	"type": "hook",
+	"requires": {
+		"MediaWiki": ">= 1.35.0"
+	},
+	"MessagesDirs": {
+		"FsLookAndFeel": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"FSLAFHooks": "includes/FSLAFHooks.php"
+	},
+	"ResourceModules": {
+		"ext.fslookandfeel.scripts": {
+			"scripts": [
+				"resources/fslaf-collapseAndToggle.js",
+				"resources/fslaf-geoHandling.js",
+				"resources/fslaf-helpMenu.js",
+				"resources/fslaf-modifySidebar.js",
+				"resources/fslaf-other.js",
+				"resources/fslaf-showMapMenus.js"
+			]
+		},
+		"ext.fslookandfeel.styles": {
+			"styles": [
+				"resources/fslaf-FsHeader.css",
+				"resources/fslaf-main.css",
+				"resources/fslaf-mainPage.css",
+				"resources/fslaf-oldStuff.css"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteExtPath": "FsLookAndFeel"
+	},
+	"Hooks": {
+		"BeforePageDisplay": "FSLAFHooks::addModules"
+	},
+	"manifest_version": 1
+}
