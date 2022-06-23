@@ -1,0 +1,150 @@
+/*----------------------------Injected Header fix---------------------------------*/
+#wrapper.inj-wrapper {
+    min-height: auto !important;
+}
+
+
+/*----------------------------guided research box---------------------------------*/
+#guidedResearchBox {
+position:absolute;
+	top:100px; 
+	left:80%;
+    width:160px;
+    text-align:center;
+    font-size:1rem;
+    cursor:pointer;
+    border-radius:5px;
+    box-shadow:5px 5px 2px #888888;
+    color:#004d99;
+    background-color:white;
+    padding:8px;
+    border:1px solid gray;
+}
+/*-------------------------------country display box----------------------*/
+.displayBox {
+	position:absolute;
+	height:400px;
+	width:200px;
+	top:100px; 
+	left:2%; 
+	border:1px solid black; 
+	box-shadow: 3px 3px 5px #888888;
+	overflow: auto;
+	background-color:white;
+	z-index:2;
+   }
+/*---------------------state of province display box-----------------------------------*/
+.statesList {
+	display:none;
+	position:absolute;
+	width:200px;
+	height:400px;
+	top:100px;
+	left:2%;
+	border:1px solid black;
+	box-shadow: 3px 3px 5px #888888;
+	background-color:white;
+	overflow: auto;
+	z-index:4;
+    }
+    
+/*-------------------------------coding for headers------------------------------*/
+.stickytops {
+	position:sticky;
+	top:0;
+	border-bottom:1px solid black;
+	border-right:1px solid black;
+	background-color:lightgray;
+	padding:2px;
+}
+
+.countryName {
+	font-size:1.1em;
+}
+.countryName:hover {
+	background-color:lightgray;
+}
+.countryListName {
+cursor:pointer;	
+color:#0645ad;
+}
+.countryListName:hover {
+	background-color:lightgray;
+}
+.countryListName2 {
+cursor:pointer;	
+}
+.countryListName2:hover {
+	background-color:lightgray;
+}
+
+.stateName  {
+	cursor:pointer;
+}
+.stateName:hover {
+	background-color:lightgray;
+}
+/*---------------------------------exit icons on country and state pages--------------*/
+.exitIcon {
+	color:red;
+	cursor:pointer;
+}
+.exitIcon2 {
+	color:red;
+	cursor:pointer;
+}
+.exitIcon3 {
+	color:red;
+	cursor:pointer;
+}
+/*------------------------------------indenting of country lists---------------------------*/
+.indent {
+	padding-left:12px
+}
+.indent:hover {
+	background-color:lightgray;
+}
+
+/*--------------------blue button on main page for all locations----------------------------*/
+.selectsMainPage {
+	padding:7px;
+	border:1px solid black;
+	border-radius:5px;
+	box-shadow: 3px 3px 5px #888888;
+	font-size:1.1em;
+	background-color:lightgray;
+	cursor:pointer;
+	opacity:0.7;
+	color:blue;
+}
+.selectsMainPage:hover {
+	background-color:white;
+}
+.selectLocation {
+	padding:7px;
+	border:1px solid black;
+	border-radius:5px;
+	box-shadow: 3px 3px 5px #888888;
+	font-size:1.1em;
+	background-color:#0f5ba9;
+	color:white;
+	cursor:pointer;
+}
+.selectLocation:hover {
+	background-color:white;
+	color:blue;
+}
+/*------------countries display none--------------------*/
+#northAmericanCountries, #southAmericanCountries, #europeCountries, #Australia_OceaniaCountries, #asiaCountries, #africaCountries, #allLocations{
+	display:none;
+}
+/*-----------------------acoding for town sidebars-(march-2022)-------------------------*/
+.usTownSidebarHeaders {
+	text-align:center; 
+	border-top:4px solid black; 
+	font-size:1.1em; 
+	font-weight:bold
+}
+.usTownSidebarFontSize {
+	font-size:0.9em;
+}
