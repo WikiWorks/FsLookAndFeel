@@ -18,6 +18,11 @@
 		"FSLAFHooks": "includes/FSLAFHooks.php"
 	},
 	"ResourceModules": {
+		"ext.fslookandfeel.injected": {
+			"scripts": [
+				"resources/fslaf-injectedHeader.js"
+			]
+		},
 		"ext.fslookandfeel.scripts": {
 			"scripts": [
 				"resources/fslaf-collapseAndToggle.js",
@@ -26,6 +31,9 @@
 				"resources/fslaf-modifySidebar.js",
 				"resources/fslaf-other.js",
 				"resources/fslaf-showMapMenus.js"
+			],
+			"dependencies": [
+				"ext.fslookandfeel.injected"
 			]
 		},
 		"ext.fslookandfeel.styles": {
