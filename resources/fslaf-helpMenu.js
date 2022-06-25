@@ -1,4 +1,7 @@
 /** 2020/08/31 Add code for new Help Menu Overlay */
+
+$(document).ready( function() {
+
 // URL for bringing in the bundle to the wiki
 const url = '/wiki/public_html/helptray.js';
 // the selector for the Help button in the header
@@ -49,4 +52,6 @@ button.addEventListener('click', function () {
     const eventName = document.querySelector('[data-test=helpOverlayCloseButton]') ? 'closeHelpTray' : 'openHelpTray';
     document.dispatchEvent(new CustomEvent(eventName));
   }
+});
+
 });
