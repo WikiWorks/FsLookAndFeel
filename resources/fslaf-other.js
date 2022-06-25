@@ -1,15 +1,3 @@
-/* Injected Header Testing 1 
-<script src="https://beta.familysearch.org/hf/hf.js"></script>
-*/
-
-/* Injected Header Testing 2 */
-(function() {
-  var injHF = document.createElement('script');
-  injHF.async = true;
-  injHF.src = 'https://beta.familysearch.org/hf/hf.js';
-  document.getElementsByTagName("head")[0].appendChild(injHF);
-})();
-
 /* Any JavaScript here will be loaded for all users on every page load. */
 
 if ( ( /Main_Page/.test(document.location.href) ) || ( /Guided_Research_for_Online_Records/.test(document.location.href) ) ) {
