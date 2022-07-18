@@ -1,754 +1,4 @@
-/*
- * =========================================================================
- * |                                                                       |
- * | FsHeader files below here                                             |
- * | (Common.css)                                                          |
- * |                                                                       |
- * =========================================================================
- */
- 
- /**
- * This is our stylesheet for the wiki. It tries to duplicate the 
- * look and feel of the main www site and be true to the FamilySearch
- * Style Guide @ref https://fs-styleguide.herokuapp.com/. 
- *
- * You can update this index with 
- * grep '/\*\*\*\* '  resources/common.css | awk -F* '{print " * " $5}'
- *
- * Contents are ordered from general to most specific
- * https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
- *
- *
- * Contents:
- *   1. Type selectors (e.g., h1) and pseudo-elements (e.g., ::before). 
- *   2. Class selectors .foo, attributes selectors [type=â€œradioâ€], pseudo-classes :hover 
- *   Location button 
- *   community button 
- *   3. ID selectors (e.g., #example). 
- *   MediaWiki:Common.css
- * 
- */
-
-li.submenu-item {
-    font-size: 14px;
-}
-
-.mw-body {
-    margin-top: 27px;
-    border: 1px solid #a7d7f9;
-    border-right-width: 0;
-}
-
-#mw-navigation #mw-head {
-    top: 80px;
-    z-index: 0 !important;
-}
-
-.overlay-header-container.position-fixed, .overlay-footer-container.position-fixed {
-    padding-top: 73px;
-}
-
-/**** 1. Type selectors (e.g., h1) and pseudo-elements (e.g., ::before). *****/
-
-/** change the box around the code feature */
-
-code {
-    color: #000;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-}
-
-dd {
-    margin-bottom: 0.5em;
-}
-
-header>.global-pri-nav-container>h1 {
-    padding-top: 0;
-    padding-bottom: 0;
-    border-bottom: 0;
-}
-
-label {
-    font-size: 0.875em !important;
-    font-weight: normal;
-    color: #252525;
-}
-
-[class^="mw-htmlform-field"] label {
-    color: inherit;
-    display: inline;
-    font-size: 100%;
-    font-weight: inherit;
-    line-height: inherit;
-    cursor: initial;
-}
-
-select {
-    border-color: rgb(169, 169, 169);
-    border-width: 1px;
-    border-style: solid;
-    font-size: 1rem;
-    font-family: inherit;
-    padding: 2px 6px 3px;
-    margin-top: 3px;
-    cursor: pointer;
-}
-
-/** Special:UserRights */
-
-fieldset ul li {
-    margin-left: 15px;
-}
-
-/**** 2. Class selectors .foo, attributes selectors [type=â€œradioâ€], pseudo-classes :hover */
-
-/**** Location button ********************************************************/
-
-.online_records_button {
-    background-color: #3073dd;
-    border-radius: 10px;
-    color: white;
-    width: 210px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.1em;
-    margin: 5px;
-    padding: 5px;
-    display: block;
-}
-
-.online_records_button:hover, .online_records_button:visited {
-    text-decoration: none !important;
-    background-color: #5088e2;
-}
-
-.online_records_button>a, .online_records_button>a.visited, .online_records_button>a.external:visited, .online_records_button>a:hover {
-    color: white !important;
-    text-decoration: none !important;
-}
-
-/**** community button *******************************************************/
-.button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-.community_button {
-    background-color: #996799;
-    border-radius: 10px;
-    color: white;
-    width: 210px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.1em;
-    margin: 5px;
-    padding: 5px;
-    display: block;
-}
-
-#fsButtons {
-   margin: 10px;
-}
-
-#fsButtons a:hover, #fsButtons a:visited {
-    text-decoration: none !important;
-}
-
-.community_button:hover, community_button:visited {
-    background-color: #a85882;
-}
-
-.community_button>a, .community_button>a.visited, .community_button>a.external:visited, .community_button>a:hover {
-    color: white !important;
-    text-decoration: none !important;
-}
-
-/** Remove the blue box-shadow when hovering over header items, which is set by the skin Minerva  */
-
-nav ul li a:hover {
-    box-shadow: unset!important;
-}
-
-/** e.g. https://beta.familysearch.org/wiki/en/United_States_Genealogy
-   e.g. https://beta.familysearch.org/wiki/en/User:Ahancey/Sandbox-columns */
-
-@media screen and (min-width: 1400px) {
-    .column-resize {
-        column-count: 5;
-        padding-left: 9% !important;
-    }
-}
-
-@media screen and (min-width: 1200px) and (max-width: 1399px) {
-    .column-resize {
-        column-count: 4;
-        padding-left: 11% !important;
-    }
-}
-
-@media screen and (min-width: 900px) and (max-width:1199px) {
-    .column-resize {
-        column-count: 3;
-        padding-left: 14% !important;
-    }
-}
-
-@media screen and (min-width: 600px) and (max-width:899px) {
-    .column-resize {
-        column-count: 2;
-        padding-left: 20% !important;
-    }
-}
-
-@media screen and (max-width:599px) {
-    .column-resize {
-        column-count: 1;
-        padding-left: 33% !important;
-    }
-}
-
-/** The following definition is needed for collapsible menu items */
-
-.mw-customtoggle, .mw-collapsible-toggle {
-    background: none !important;
-    border: none !important;
-    font-size: 1rem !important;
-    line-height: 1rem !important;
-    font-family: Helvetica, Verdana, san-serif !important;
-    color: #262626 !important;
-    padding: 0px !important;
-}
-
-/**  Fix selection box size in page tabs ( Read, Edit, View History, etc.) */
-
-.vectorTabs li a {
-    padding-bottom: 1rem;
-    font-size: inherit;
-}
-
-/**  fix clickable box around the 'more' tab at the top of the page. */
-
-.vectorMenu #p-cactions {
-    margin-top: 0.5rem;
-}
-
-.vector-menu-tabs li a {
-    font-size: inherit !important;
-}
-
-.toctext {
-    line-height: 1.125rem;
-}
-
-/** images  Note the if you wrap your image in a p tag rather than a div
- * you can get a better print layout */
-
-div.floatright, table.floatright {
-    clear: right;
-    float: right;
-    position: relative;
-    margin: 0 0 .5em .5em;
-    border: 0;
-}
-
-/** e.g. https://beta.familysearch.org/wiki/en/User:Ahancey/Sandbox-tables2 */
-
-div.floatleft, table.floatleft {
-    float: left;
-    clear: left;
-    position: relative;
-    margin: 0 .5em .5em 0;
-    border: 0;
-}
-
-/** e.g. https://beta.familysearch.org/wiki/en/GuidedResearch:Why_Can%27t_I_Find_the_Record_-_Lancashire_Births */
-
-.plainlinks a {
-    background: none !important;
-    padding: 0 !important;
-}
-
-/** prettytable class for skinning normal tables
-e.g. https://beta.familysearch.org/wiki/en/FamilySearch_Indexing_Updates
-e.g. https://beta.familysearch.org/wiki/en/FamilySearch_Wiki:New_Contributors_Training
-e.g. https://beta.familysearch.org/wiki/en/User:Batsondl/Sandbox_20
-Beware!! There is a 'template:prettytable' that is totally different:
-@FIXME Should eliminate the template and replace it with built-in class wikitable 
-These and variants can be found in our wiki
-{| class="prettytable" |
-{| class="wikitable sortable" {{prettytable}} 
-{| {{prettytable}} |
-*/
-
-.prettytable {
-    margin: 1em 1em 1em 0;
-    background: #f9f9f9;
-    border: 1px #aaa solid;
-    border-collapse: collapse;
-    color: #333;
-}
-
-.prettytable th, .prettytable td {
-    border: 1px #aaa solid;
-    padding: 0.2em;
-}
-
-.prettytable th {
-    background: #f2f2f2;
-    text-align: center;
-}
-
-.prettytable caption {
-    font-weight: bold;
-}
-
-/** For linked citation numbers and document IDs, where
-   the number need not be shown on a screen or a handheld,
-   but should be included in the printed version */
-
-@media screen and (min-width:480px) {
-    .citation .printonly {
-        display: none;
-    }
-}
-
-/** Breaks long urls, etc., rather than overflowing box */
-
-.url {
-    word-wrap: break-word;
-    -ms-word-break: break-all;
-    -epub-word-break: break-all;
-    word-break: break-all;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    -epub-hyphens: auto;
-    hyphens: auto;
-}
-
-/** Style for horizontal lists (separator following item).
-   IE8-specific classes are assigned in [[MediaWiki:Common.js/IEFixes.js]].
-   @source mediawiki.org/wiki/Snippets/Horizontal_lists
-   @revision 5 (2014-02-24)
-   @author [[User:Edokter]]
- */
-
-/** HLIST IS PART OF MINERVA AND SO THIS MAY NOT BE NEEDED  The part that seems to be 
- * different is the content 'before' and 'after'
-   e.g.https://beta.familysearch.org/wiki/en/index.php?title=Template:Organization_infoboxes
-   e.g. https://beta.familysearch.org/wiki/en/Template:TOC_top */
-
-.hlist dl, .hlist ol, .hlist ul {
-    margin: 0;
-    padding: 0;
-}
-
-/** Display list items inline */
-
-.hlist dd, .hlist dt, .hlist li {
-    display: inline;
-}
-
-/** Display nested lists inline */
-
-.hlist dl dl, .hlist dl ol, .hlist dl ul, .hlist ol dl, .hlist ol ol, .hlist ol ul, .hlist ul dl, .hlist ul ol, .hlist ul ul {
-    display: inline;
-}
-
-/** Generate interpuncts */
-
-.hlist dt:after {
-    content: ": ";
-}
-
-.hlist dd:after, .hlist li:after {
-    content: " . ";
-    font-weight: bold;
-}
-
-/** For IE8 */
-
-.hlist dd:last-child:after, .hlist dt:last-child:after, .hlist li:last-child:after {
-    content: none;
-}
-
-.hlist dd.hlist-last-child:after, .hlist dt.hlist-last-child:after, .hlist li.hlist-last-child:after {
-    content: none;
-}
-
-/** Add parentheses around nested lists */
-
-.hlist dd dd:first-child:before, .hlist dd dt:first-child:before, .hlist dd li:first-child:before, .hlist dt dd:first-child:before, .hlist dt dt:first-child:before, .hlist dt li:first-child:before, .hlist li dd:first-child:before, .hlist li dt:first-child:before, .hlist li li:first-child:before {
-    content: " (";
-    font-weight: normal;
-}
-
-.hlist dd dd:last-child:after, .hlist dd dt:last-child:after, .hlist dd li:last-child:after, .hlist dt dd:last-child:after, .hlist dt dt:last-child:after, .hlist dt li:last-child:after, .hlist li dd:last-child:after, .hlist li dt:last-child:after, .hlist li li:last-child:after {
-    content: ") ";
-    font-weight: normal;
-}
-
-/** For IE8 */
-
-.hlist dd dd.hlist-last-child:after, .hlist dd dt.hlist-last-child:after, .hlist dd li.hlist-last-child:after, .hlist dt dd.hlist-last-child:after, .hlist dt dt.hlist-last-child:after, .hlist dt li.hlist-last-child:after, .hlist li dd.hlist-last-child:after, .hlist li dt.hlist-last-child:after, .hlist li li.hlist-last-child:after {
-    content: ") ";
-    font-weight: normal;
-}
-
-/** Put ordinals in front of ordered list items */
-
-.hlist ol {
-    counter-reset: listitem;
-}
-
-.hlist ol>li {
-    counter-increment: listitem;
-}
-
-.hlist ol>li:before {
-    content: " " counter(listitem) " ";
-    white-space: nowrap;
-}
-
-.hlist dd ol>li:first-child:before, .hlist dt ol>li:first-child:before, .hlist li ol>li:first-child:before {
-    content: " (" counter(listitem) " ";
-}
-
-/** Unbulleted lists */
-
-.plainlist ul {
-    line-height: inherit;
-    list-style: none none;
-    margin: 0;
-}
-
-.plainlist ul li {
-    margin-bottom: 0;
-}
-
-/** tooltip popup box */
-
-.tooltip {
-    position: relative;
-    display: inline-block;
-}
-
-.tooltip .tooltiptext {
-    visibility: hidden;
-    background-color: #85B807;
-    color: #fff;
-    text-align: left;
-    border-radius: 6px;
-    padding: 10px;
-    position: absolute;
-    z-index: 1;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -60px;
-    /** Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-.tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #85B807 transparent transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-}
-
-/**** 3. ID selectors (e.g., #example). **************************************/
-
-/** Entries to counter wiki css code that is disrupting the ability of text to flow */
-
-#mainContent p {
-    clear: none;
-}
-
-#contentSub {
-    display: block;
-    font-size: 84%;
-    line-height: 1.2em;
-    margin: 0 0 1.4em 1em;
-    color: #7D7D7D;
-    width: auto;
-}
-
-div#mw-panel div.portal {
-    margin: 0;
-}
-
-div#mw-panel div.portal div.body ul li a {
-    color: #0060d7;
-}
-
-div#mw-panel div.portal h3 {
-    font-family: Helvetica, Verdana, san-serif;
-    font-size: 0.875em;
-}
-
-.vectorTabs li {
-    font-size:.875em;
-}
-
-/** Entries to counter wiki css code for TOC */
-
-#toc {
-    width: auto;
-}
-
-#toc ul {
-    margin-top: 0;
-    margin-left: 1em;
-}
-
-#menu-header-links-bottom.menu {
-    list-style: none;
-}
-
-/** get rid of 'language' at the top of the screen, next to username */
-
-#pt-uls a.uls-trigger {
-    display: none;
-}
-
-#wikiEditor-ui-toolbar {
-    height: 32px;
-}
-
-div#mw-navigation #pt-logout, div#mw-navigation #pt-anonlogin, div#mw-navigation #p-logo {
-    display: none;
-}
-
-#mw-navigation #mw-panel.collapsible-nav .portal.first.persistent {
-    margin-top: 10px;
-    margin-bottom: 30px;
-}
-
-#mw-navigation #mw-panel.collapsible-nav .portal.first.persistent h3 {
-    display: block;
-    font-size: 1em;
-}
-
-#mw-panel #p-logo+.portal h3 {
-    display: block!important;
-}
-
-#mw-navigation #mw-panel {
-    top: 80px;
-    z-index: 1;
-}
-
-.templeMember #global-engage-header ul.main-nav li.nav-temple-link .templeInfoChecked .nav-item.temple {
-    display: block !important;
-}
-
-#wrapper .inj-wrapper {
-    min-height: inherit;
-    width: 100%;
-}
-
-#fs-footer {
-    background-color: transparent;
-    font-size: 1rem;
-    text-align: center;
-}
-
-@media screen and (min-width: 992px) {
-    #fs-footer {
-        text-align: left;
-    }
-}
-
-#fs-footer .footer-container {
-    position: relative;
-    display: block;
-    color: #7d7976;
-}
-
-#fs-footer .footer-container a {
-    color: #333;
-}
-
-#fs-footer .footer-container .copyright-notice .service-by-link a {
-    white-space: nowrap;
-}
-
-#fs-footer .footer-container .copyright-notice, #fs-footer .footer-container .copyright-notice {
-    font-size: 0.75rem;
-}
-
-#fs-footer .footer-container .footer-nav {
-    margin-bottom: 1.25rem;
-}
-
-#fs-footer .footer-container .footer-nav .menu-footer-menu-container, #fs-footer .footer-container .footer-nav .menu-footer-menu-container ul.menu, #fs-footer .footer-container .footer-nav span.menu-item, #fs-footer .footer-container .footer-nav #menu-footer-menu {
-    display: inline;
-}
-
-#fs-footer .footer-container .footer-nav #menu-footer-menu {
-    padding: 0;
-}
-
-#fs-footer .footer-container .footer-nav span.menu-item {
-    font-family: "Verdana", sans-serif;
-    color: #333;
-}
-
-#fs-footer .footer-container .footer-nav .menu-item {
-    display: inline-block;
-    margin-right: 2rem;
-    font-size: 0.75rem;
-}
-
-#fs-footer .footer-container .footer-nav .menu-item a {
-    font-size: inherit;
-}
-
-@media screen and (max-width: 991px) {
-    #fs-footer {
-        padding: 1.5rem 0;
-        margin: 0 10%;
-    }
-    body #mw-mf-viewport {
-        height: auto;
-    }
-    #fs-footer .footer-container span.church-logo-container {
-        text-align: center;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    #fs-footer .footer-container span.church-logo-container {
-        float: right;
-        position: relative;
-        bottom: 80px;
-    }
-    #fs-footer {
-        margin-left: 11em;
-        padding: 0 1.25em 1.5em 1.25em;
-    }
-}
-
-/** tighten up the vertical spacing of footer list-items */
-
-#footer ul li {
-    padding-bottom: 0;
-}
-
-/**** MediaWiki:Common.css ************************************************/
-
-/* make sure missing pages remain colored correctly after visiting */
-
-a.new:visited, #p-personal a.new:visited {
-    color: #fcb34b !important;
-}
-
-form input {
-    /*    border: 1px solid !important;*/
-    border-color: #bab7b1;
-}
-
-#newHeading {
-    margin-top: 0;
-}
-
-/** Define spacing and # of columns based on screen size 
- * e.g. https://beta.familysearch.org/wiki/en/England_Genealogy
- */
-
-@media screen and (min-width: 1400px) {
-    .column-spacing-fullscreen {
-        column-count: 6;
-        padding-right: 9% !important;
-    }
-}
-
-@media screen and (min-width: 1200px) and (max-width: 1399px) {
-    .column-spacing-fullscreen {
-        column-count: 5;
-    }
-}
-
-@media screen and (min-width: 900px) and (max-width:1199px) {
-    .column-spacing-fullscreen {
-        column-count: 4;
-    }
-}
-
-@media screen and (min-width: 600px) and (max-width:899px) {
-    .column-spacing-fullscreen {
-        column-count: 3;
-    }
-}
-
-@media screen and (max-width:745px) {
-    .column-spacing-fullscreen {
-        column-count: 2;
-    }
-}
-
-@media screen and (max-width:500px) {
-    .column-spacing-fullscreen {
-        column-count: 1;
-    }
-}
-
-/** Define spacing and # of columns based on screen size - however, 
- * this section assumes that only half the screen is available for 
- * the columns.  Even though the screen size may be 1400px, the 
- * available space for the columns is half that, or 700px. 
- * e.g. https://beta.familysearch.org/wiki/en/Asia
- * e.g. https://beta.familysearch.org/wiki/en/North_America
- */
-
-@media screen and (min-width: 1400px) {
-    .column-spacing-halfscreen {
-        column-count: 3;
-    }
-}
-
-@media screen and (min-width: 1200px) and (max-width: 1399px) {
-    .column-spacing-halfscreen {
-        column-count: 2;
-    }
-}
-
-@media screen and (min-width: 900px) and (max-width:1199px) {
-    .column-spacing-halfscreen {
-        column-count: 1;
-    }
-}
-
-.column-spacing-halfscreen li, .column-spacing-fullscreen li {
-    padding-right: 5px;
-}
-
-/*
- * =========================================================================
- * |                                                                       |
- * | FsHeader files below here                                             |
- * | (header.css)                                                          |
- * |                                                                       |
- * =========================================================================
- */
- 
- /**
+/**
  * You can comment AS MUCH AS YOU WANT in this document. All comments are 
  * automatically stripped by the Resource Loader so that they don't add weight
  * to the document.
@@ -768,7 +18,7 @@ form input {
 *  1. Type selectors (e.g., h1) and pseudo-elements (e.g., ::before). 
 *  Forms 
 *  Lists 
-*  2. Class Selectors (.foo), attributes selectors ([type=â€œradioâ€]) pseudo-classes (:hover 
+*  2. Class Selectors (.foo), attributes selectors ([type=“radio”]) pseudo-classes (:hover 
 *  Navigation 
 *  side-nav-buttons "sign in" "free account" 
 *  3. ID selectors (e.g., #example). 
@@ -806,9 +56,7 @@ form input {
 }
 
 html, body {
-	/* font-family: Helvetica, Verdana, sans-serif; */
-	font-family: Verdana, Ayuthaya, HanaMinBFont, sans-serif;
-
+	font-family: Helvetica, Verdana, sans-serif;
 }
 
 .mw-body p, .mw-body-content p, p {
@@ -916,10 +164,6 @@ a {
 	transition: color .1s ease-in-out, background-color .1s ease-in-out;
 }
 
-#mw-head-base {
-	height: 3.03em !important;
-}
-
 /**** Forms ******************************************************************/
 
 /** We use the inputbox extension to create forms.
@@ -940,10 +184,12 @@ form input {
 	border: 2px solid;
 	line-height: normal;
 }
+
 input[type=search], input[type=text], input[type=submit] {
 	-moz-appearance: none;
 	-webkit-appearance: none;
 }
+
 input[type="text"]:not(.et_pb_s) {
 	background-color: #fff!important;
 	border: 1px solid #c8c8c8!important;
@@ -951,14 +197,17 @@ input[type="text"]:not(.et_pb_s) {
 	-moz-box-shadow: inset 0 3px 0 rgba(0, 0, 0, 0.05)!important;
 	box-shadow: inset 0 3px 0 rgba(0, 0, 0, 0.05)!important;
 }
+
 input[type="text"]:not(.et_pb_s):focus, input[type="text"]:not(.et_pb_s):active {
 	border-color: #333;
 }
+
 input[type=number], input[type=email], input[type=url], input[type=search] {
 	padding: 0.1em;
 	padding-left: 1em;
 	padding-right: 1em;
 }
+
 input[type=tel], input[type=color], input[type=password], input[type=datetime], input[type=datetime-local], input[type=date], input[type=month], input[type=time], input[type=week], input[type=text] {
 	font: 13.3333px Arial;
 	font-size: .875em;
@@ -987,8 +236,7 @@ input[type=tel], input[type=color], input[type=password], input[type=datetime], 
 
 ul li {
 	line-height: 1.25rem;
-	/* font-size: 1rem; */
-	font-size: .65em;
+	font-size: 1rem;
 	color: black!important;
 	list-style-image:none;
 }
@@ -1023,15 +271,15 @@ img {
 }
 
 
-/**** 2. Class Selectors (.foo), attributes selectors ([type=â€œradioâ€]) pseudo-classes (:hover */
+/**** 2. Class Selectors (.foo), attributes selectors ([type=“radio”]) pseudo-classes (:hover */
 
 .container {
 	width: 100%;
 }
 
 .mw-body p, .mw-body-content, .mw-body-content p, p {
-	line-height: 1.5em !important;
-	font-size: 1rem !important;
+	line-height: 1.5em;
+	font-size: 1rem;
 	color: #333;
 }
 
@@ -1093,6 +341,7 @@ img {
 /**
  * Navigation was redone to copy the header2019 of the www site
  * see https://discourse.equality-tech.com/t/fix-navigation-markup/976
+
  * The navigation has the following elements, in order of appearance:
  * header#header-2019     The top banner element
  * nav#primaryNav    
@@ -1233,7 +482,7 @@ html .mobile-menu-open body {
 /** 20190324 - fixes gap between tabs and main body. */
 
 #mw-navigation #mw-head {
-	top: 52px;
+	top: 59px;
 	z-index: 0 !important;
 	/* fixes see-through dropdown menus */
 }
@@ -1277,7 +526,7 @@ nav ul li {
 
 
 html {
-	font-size: 14px !important;
+	font-size: 14px;
 }
 
 html[lang="zh"],html[lang="ja"],html[lang="ko"] {
@@ -1286,7 +535,7 @@ html[lang="zh"],html[lang="ja"],html[lang="ko"] {
 
 body {
 	color: #333331;
-	font-family: Verdana,Ayuthaya,'HanaMinBFont',sans-serif !important;
+	font-family: Verdana,Ayuthaya,'HanaMinBFont',sans-serif;
 	font-size: 1rem;
 	line-height: 1.625rem;
 }
@@ -1298,28 +547,26 @@ body {
 }
 
 [lang="zh"],[lang="zh"] body,[lang="zh"] h1,[lang="zh"] h2,[lang="zh"] h3,[lang="zh"] h4,[lang="zh"] h5,[lang="zh"] h6,[lang="zh"] .fs-h1,[lang="zh"] .fs-h2,[lang="zh"] .fs-h3,[lang="zh"] .fs-h4,[lang="zh"] .fs-h5,[lang="zh"] .fs-h6 {
-	font-family: "é»‘é«”-ç¹","Heiti TC","åŽæ–‡ç»†é»‘","STXihei","å¾®è»Ÿæ­£é»‘é«”","Microsoft JengHei","ä¸­æ˜“é»‘ä½“","SimHei","HanaMinBFont",sans-serif;
+	font-family: "黑體-繁","Heiti TC","华文细黑","STXihei","微軟正黑體","Microsoft JengHei","中易黑体","SimHei","HanaMinBFont",sans-serif;
 	letter-spacing: normal;
 	/* [1] */
 }
 
 [lang="ja"],[lang="ja"] body,[lang="ja"] h1,[lang="ja"] h2,[lang="ja"] h3,[lang="ja"] h4,[lang="ja"] h5,[lang="ja"] h6,[lang="ja"] .fs-h1,[lang="ja"] .fs-h2,[lang="ja"] .fs-h3,[lang="ja"] .fs-h4,[lang="ja"] .fs-h5,[lang="ja"] .fs-h6 {
-	font-family: "ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3","Hiragino Kaku Gothic Pro","ãƒ¡ã‚¤ãƒªã‚ª","Meiryo","ï¼­ï¼³ ã‚´ã‚·ãƒƒã‚¯","MS Gothic",sans-serif;
+	font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ","Meiryo","ＭＳ ゴシック","MS Gothic",sans-serif;
 	letter-spacing: normal;
 	/* [1] */
 }
 
 [lang="ko"],[lang="ko"] body,[lang="ko"] h1,[lang="ko"] h2,[lang="ko"] h3,[lang="ko"] h4,[lang="ko"] h5,[lang="ko"] h6,[lang="ko"] .fs-h1,[lang="ko"] .fs-h2,[lang="ko"] .fs-h3,[lang="ko"] .fs-h4,[lang="ko"] .fs-h5,[lang="ko"] .fs-h6 {
-	font-family: "Apple SD Gothic Neo","ì• í”Œê³ ë”•","AppleGothic","ë§‘ì€ ê³ ë”•","Malgun Gothic","êµ´ë¦¼","Gulim",sans-serif;
+	font-family: "Apple SD Gothic Neo","애플고딕","AppleGothic","맑은 고딕","Malgun Gothic","굴림","Gulim",sans-serif;
 	letter-spacing: normal;
 	/* [1] */
 }
 
-/*
 :root {
 	--fs-font-face-heading:"museo","Verdana","Ayuthaya","HanaMinBFont",serif;
 }
-*/
 
 /* */
 h1,h2,h3,h4,.fs-h1,.fs-h2,.fs-h3,.fs-h4 {
@@ -2198,15 +1445,15 @@ main {
 }
 
 .locale-zh,.locale-zh body,.locale-zh body.verdana,.locale-zh body .serif,.locale-zh #global-header,.locale-zh #global-footer {
-	font-family: "é»‘é«”-ç¹","Heiti TC","åŽæ–‡ç»†é»‘","STXihei","å¾®è»Ÿæ­£é»‘é«”","Microsoft JengHei","ä¸­æ˜“é»‘ä½“","SimHei","HanaMinBFont",sans-serif;
+	font-family: "黑體-繁","Heiti TC","华文细黑","STXihei","微軟正黑體","Microsoft JengHei","中易黑体","SimHei","HanaMinBFont",sans-serif;
 }
 
 .locale-ja,.locale-ja body,.locale-ja body.verdana,.locale-ja body .serif,.locale-ja #global-header,.locale-ja #global-footer {
-	font-family: "ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3","Hiragino Kaku Gothic Pro","ãƒ¡ã‚¤ãƒªã‚ª","Meiryo","ï¼­ï¼³ ã‚´ã‚·ãƒƒã‚¯","MS Gothic",sans-serif;
+	font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ","Meiryo","ＭＳ ゴシック","MS Gothic",sans-serif;
 }
 
 .locale-ko,.locale-ko body,.locale-ko body.verdana,.locale-ko body .serif,.locale-ko #global-header,.locale-ko #global-footer {
-	font-family: "Apple SD Gothic Neo","ì• í”Œê³ ë”•","AppleGothic","ë§‘ì€ ê³ ë”•","Malgun Gothic","êµ´ë¦¼","Gulim",sans-serif;
+	font-family: "Apple SD Gothic Neo","애플고딕","AppleGothic","맑은 고딕","Malgun Gothic","굴림","Gulim",sans-serif;
 }
 
 .locale-ru h1,.locale-ru h2,.locale-ru h3,.locale-ru h4,.locale-ru h5,.locale-ru h6 {
@@ -3220,22 +2467,3 @@ main {
 
 /*# sourceMappingURL=nlihp.css.map */
 
-
-/*
- * =========================================================================
- * |                                                                       |
- * | FsHeader files below here                                             |
- * | (Tweaks)                                                          |
- * |                                                                       |
- * =========================================================================
- */
- 
- /**** Push footer away from sidebar **/
-#global-footer {
-	margin-left: 150px;
-}
-
- /**** Remove Header Language Picker **/
-.langPicker {
-	display: none !important;
-}

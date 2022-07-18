@@ -43,6 +43,17 @@
 				"resources/fslaf-mainPage.css",
 				"resources/fslaf-oldStuff.css"
 			]
+		},
+		"ext.fslookandfeel.fsheader": {
+			"styles": [
+				"resources/fsHeader/common.css",
+				"resources/fsHeader/header.css"
+			],
+			"styles": [
+				"resources/fsHeader/init.js",
+				"resources/fsHeader/script.js",
+				"resources/fsHeader/usabilla.js"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
