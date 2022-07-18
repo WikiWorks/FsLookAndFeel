@@ -34,13 +34,13 @@ li.submenu-item {
 }
 
 .mw-body {
-    margin-top: 27px;
+    margin-top: 27px !important;
     border: 1px solid #a7d7f9;
     border-right-width: 0;
 }
 
 #mw-navigation #mw-head {
-    top: 80px;
+    top: 80px !important;
     z-index: 0 !important;
 }
 
