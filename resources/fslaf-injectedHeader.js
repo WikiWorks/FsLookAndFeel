@@ -6,6 +6,6 @@
 (function() {
   var injHF = document.createElement('script');
   injHF.async = true;
-  injHF.src = 'https://beta.familysearch.org/hf/hf.js';
+  injHF.src = 'https://' + window.location.host + '/hf/hf.js';
   document.getElementsByTagName("head")[0].appendChild(injHF);
 })();
