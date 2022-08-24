@@ -42,7 +42,7 @@ if ( re.test(document.location.pathname) ) {
     $("#menu").on("click", ".menulink", function () {
         // console.log( $( this ).text() );
         // find out what menu to show
-        var menu = $(this).text().toLowerCase();
+        var menu = $(this).attr("id").toLowerCase();
         // replace all the blanks
         menu = menu.replace(/ /g, "_");
         menu = menu + "_states";
