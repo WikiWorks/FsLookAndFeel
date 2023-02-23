@@ -17,17 +17,22 @@ box-shadow: none;
 }
 /* Move the Traslate box */
 #google_translate_element {
-        transform: translateX(-10px);
-}
-/* Zoom for the entire element */
-.goog-te-gadget-simple {
-        zoom: 0.85 !important;
-        -moz-transform: scale(0.85) !important;
+        transform: translateX(-5px);
+        zoom: .85 !important;
         padding-right: 15px;
 }
+
 /* Remove drowndown arrow */
-.goog-te-menu-value span:last-child {
+.VIpgJd-ZVi9od-xl07Ob-lTBxed span:last-child {
         display:none !important;
+}
+/* Remove pipe */
+.VIpgJd-ZVi9od-xl07Ob-lTBxed span:nth-of-type(2) {
+        display:none !important;
+}
+/* Font family */
+.goog-te-gadget-simple {
+	font-family: Verdana,Ayuthaya,'HanaMinBFont',sans-serif !important;
 }
 
 /* Changes to header formatting levels */
