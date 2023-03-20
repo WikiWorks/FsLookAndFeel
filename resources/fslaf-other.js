@@ -17,13 +17,28 @@ $(document).ready(function(){
   $("#mw-customcollapsible-Additional_online_resources").css({"display": "block"});
 });
 
-/* Add Adobe Launch 2020-11-12 
- * There is a corresponding section in override.php to load the library */
+/* Add Adobe Launch 2020-11-12 (Updated 2023-03-20)
+* There is a corresponding section in override.php to load the library */
+/* Section to read cookie to get the translation languages */
+function readCookie() {
+    var c = document.cookie.split('; '),
+    cookies = {}, i, C;
+    for (i = c.length - 1; i >= 0; i--) {
+        C = c[i].split('=');
+        cookies[C[0]] = C[1];
+     }
+    if (typeof cookies.googtrans !== "undefined") {
+        return cookies.googtrans;
+    } else {
+        return '/' + mw.config.get('wgContentLanguage');
+    }
+}
+/* Section to write to Adobe Analytics */
 $(document).ready(function(){
   // information to record
   var config = {
         'site_id': 'FamilySearch',
-        'site_language': mw.config.get('wgContentLanguage'), // e.g. 'en'
+        'site_language': readCookie(), // from function above, e.g. '/en/es' or '/en'
         'page_channel': 'Wiki',
         'page_detail': document.location.pathname + document.location.search, //'Home' for the homepage or a unique page title for other pages; including querystring
         'page_type': 'wiki',
@@ -38,7 +53,6 @@ $(document).ready(function(){
     console.log("recorded page view for " + config.page_detail);
 });
 /* End Adobe Launch code */
-
 
 function getCookie(name) {
     var re = new RegExp(name + "=([^;]+)");
