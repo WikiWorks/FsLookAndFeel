@@ -21,6 +21,10 @@
 		"ext.fslookandfeel.injected": {
 			"scripts": [
 				"resources/fslaf-injectedHeader.js"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
 			]
 		},
 		"ext.fslookandfeel.scripts": {
@@ -34,6 +38,10 @@
 			],
 			"dependencies": [
 				"ext.fslookandfeel.injected"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
 			]
 		},
 		"ext.fslookandfeel.styles": {
@@ -42,6 +50,10 @@
 				"resources/fslaf-main.css",
 				"resources/fslaf-mainPage.css",
 				"resources/fslaf-oldStuff.css"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
 			]
 		},
 		"ext.fslookandfeel.fsheader": {
@@ -53,6 +65,10 @@
 				"resources/fsHeader/init.js",
 				"resources/fsHeader/script.js",
 				"resources/fsHeader/usabilla.js"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
 			]
 		}
 	},
