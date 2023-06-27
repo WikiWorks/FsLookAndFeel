@@ -26,9 +26,10 @@ function readCookie() {
     for (i = c.length - 1; i >= 0; i--) {
         C = c[i].split('=');
         cookies[C[0]] = C[1];
-     }
+    }
+    T = cookies.googtrans.split('/');
     if (typeof cookies.googtrans !== "undefined") {
-        return cookies.googtrans;
+        return '/' + mw.config.get('wgContentLanguage') + '/' + T[2];
     } else {
         return '/' + mw.config.get('wgContentLanguage');
     }
