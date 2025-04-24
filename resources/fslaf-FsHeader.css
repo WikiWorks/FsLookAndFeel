@@ -3239,3 +3239,7 @@ main {
 .langPicker {
 	display: none !important;
 }
+
+.skiptranslate {
+	margin-top: 0;
+}
