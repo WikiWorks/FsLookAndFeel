@@ -103,49 +103,6 @@ fieldset ul li {
     text-decoration: none !important;
 }
 
-/**** community button *******************************************************/
-.button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-.community_button {
-    background-color: #996799;
-    border-radius: 10px;
-    color: white;
-    width: 210px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.1em;
-    margin: 5px;
-    padding: 5px;
-    display: block;
-}
-
-#fsButtons {
-   margin: 10px;
-}
-
-#fsButtons a:hover, #fsButtons a:visited {
-    text-decoration: none !important;
-}
-
-.community_button:hover, community_button:visited {
-    background-color: #a85882;
-}
-
-.community_button>a, .community_button>a.visited, .community_button>a.external:visited, .community_button>a:hover {
-    color: white !important;
-    text-decoration: none !important;
-}
-
 /** Remove the blue box-shadow when hovering over header items, which is set by the skin Minerva  */
 
 nav ul li a:hover {
