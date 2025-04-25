@@ -119,7 +119,7 @@ fieldset ul li {
 
 .online_records_button:hover, .online_records_button:visited {
     text-decoration: none !important;
-    background-color: #5088e2;
+    background-color: #6597e6;
 }
 
 .online_records_button>a, .online_records_button>a.visited, .online_records_button>a.external:visited, .online_records_button>a:hover {
