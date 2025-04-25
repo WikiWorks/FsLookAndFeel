@@ -162,7 +162,7 @@ fieldset ul li {
 }
 
 .community_button:hover, community_button:visited {
-    background-color: #a85882;
+    background-color: #ad85ad;
 }
 
 .community_button>a, .community_button>a.visited, .community_button>a.external:visited, .community_button>a:hover {
