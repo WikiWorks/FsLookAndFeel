@@ -78,30 +78,6 @@ fieldset ul li {
 
 /**** 2. Class selectors .foo, attributes selectors [type=“radio”], pseudo-classes :hover */
 
-/**** Location button ********************************************************/
-
-.online_records_button {
-    background-color: #3073dd;
-    border-radius: 10px;
-    color: white;
-    width: 210px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.1em;
-    margin: 5px;
-    padding: 5px;
-    display: block;
-}
-
-.online_records_button:hover, .online_records_button:visited {
-    text-decoration: none !important;
-    background-color: #5088e2;
-}
-
-.online_records_button>a, .online_records_button>a.visited, .online_records_button>a.external:visited, .online_records_button>a:hover {
-    color: white !important;
-    text-decoration: none !important;
-}
 
 /** Remove the blue box-shadow when hovering over header items, which is set by the skin Minerva  */
 
