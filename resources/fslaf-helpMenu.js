@@ -6,6 +6,8 @@ $(document).ready( function() {
 const url = '/wiki/public_html/helptray.js';
 // the selector for the Help button in the header
 const button = document.querySelector('#helpLink');
+// stop processing if the button doesn't exist
+if (!button) return;
 button.addEventListener('click', function () {
   // If the script that brings in the Help Overlay isn't on the page yet, we know
   // we need to load it in
